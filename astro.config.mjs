@@ -11,9 +11,15 @@ export default defineConfig({
 			sidebar: [
 				{ label: 'Kursöversikt', link: '/' },
 				{
-					label: "Kursmoment",
+					label: "Sprints",
 					items: [
 						'kravspec',
+						'sprint0',
+						'sprint1',
+						'sprint2',
+						'sprint3',
+						'sprint4',
+						'sprint5',
 					]
 				},
 			],
