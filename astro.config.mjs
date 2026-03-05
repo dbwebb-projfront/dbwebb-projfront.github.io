@@ -19,7 +19,7 @@ export default defineConfig({
 						'sprint2',
 						'sprint3',
 						'sprint4',
-						'sprint5',
+						'sprint99',
 					]
 				},
 			],
