@@ -13,6 +13,9 @@ export default defineConfig({
 				{
 					label: "Sprints",
 					items: [
+						'kunskap/scrum',
+						'kunskap/arbeta_i_sprintar',
+						'kunskap/user_stories_tasks',
 						'kravspec',
 						'sprint0',
 						'sprint1',

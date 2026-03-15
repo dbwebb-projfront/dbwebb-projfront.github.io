@@ -1,0 +1,151 @@
+---
+title: Om Scrum
+description: En introduktion till Scrum och hur vi använder det i kursen.
+---
+
+import { Image } from 'astro:assets';
+import scrum_img from '../../../assets/scrum.png';
+
+
+
+Scrum är ett ramverk (ibland kallas det metod eller process) för agil mjukvaruutveckling som hjälper team att arbeta strukturerat, iterativt och med kontinuerlig återkoppling. 
+I kursen används Scrum som en **inspirationskälla** — du ska som kursdeltagare och gruppmedlemm tillämpa några av dess kärnelement.
+
+Det är viktigt att förstå att Scrum i industrin är ett levande ramverk med formella roller, ceremonier och artefakter. 
+I många fall anpassas processen och tar beståndsdelar ur flera olika ramverk/metoder/processer.  
+Det ni möter i kursen är en kursanpassad variant som ändå speglar hur Scrum och en process fungerar i verkligheten.
+
+
+
+## Vad är Scrum?
+
+Scrum bygger på tre grundläggande principer för att arbeta iterativt (på svenska):
+
+- **Transparens** — alla i teamet ska ha samma bild av arbetet och dess status.
+- **Inspektion** — regelbundet granska hur arbetet fortskrider och om målet är rätt.
+- **Anpassning** — justera arbetssätt och prioriteringar baserat på det man lärt sig.
+
+Ramverket är avsiktligt enkelt: det definierar ett litet antal roller, händelser och artefakter — och lämnar resten till teamet att fylla med innehåll.
+
+> _Scrum är inte en process eller en teknik för att bygga produkter. Det är ett ramverk inom vilket du kan använda olika processer och tekniker. — *The Scrum Guide*_
+
+
+
+## Roller i Scrum
+
+I ett klassiskt Scrum-team finns tre roller:
+
+| Roll | Ansvar |
+|---|---|
+| **Product Owner** | Ansvarar för produktens vision och prioriterar kravlistan (backlog). |
+| **Scrum Master** | Hjälper teamet att följa Scrum-principerna och röja hinder. |
+| **Developers** | Utför arbetet och levererar inkrement varje sprint. |
+
+**I kursen:** Ni arbetar i grupper utan roller - det finns inget formellt krav, men heller inget hinder.  
+Ni förväntas alla bidra till planering, implementation och reflektion.   
+Kursledningen fungerar som en form av Product Owner — vi tillhandahåller kravspecifikationen — medan ni som grupp hanterar rollen som developers (utvecklare) och delar ansvaret för processen.
+
+
+
+## Artefakter
+
+Scrum använder tre centrala artefakter för att synliggöra arbetet:
+
+### Product Backlog
+
+En prioriterad lista över allt som ska göras i projektet. Innehållet kommer från kravspecifikationen och formuleras av teamet som **user stories**.  
+Det finns inget formellt krav att ni _måste_ ha en product backlog. Däremot är det en rekommendation.
+
+**I kursen** utgör kravspecifikationen grunden för er backlog. Ni ansvarar för att bryta ner kraven i user stories och prioritera dem inför varje sprint.
+
+### Sprint Backlog
+
+Den _delmängd_ av backloggen som teamet väljer att arbeta med under en sprint. Kompletteras med konkreta **uppgifter (tasks)** som teamet planerar och estimerar.
+
+**I kursen** dokumenteras sprint-backloggen i GitHub Projects eller Trello, och estimering görs i CSV-filer per sprint.
+
+### Increment
+
+Det färdiga, fungerande resultat som levereras i slutet av varje sprint. I Scrum ska ett inkrement alltid vara potentiellt driftsättbart.
+
+**I kursen** lämnas varje sprints inkrement in samband med sprintens avslut. Instruktioner och krav kommer finnas för respektive sprint och inlämningen tillsammans med ert arbete är detta er leverans och examinationspunkt för sprinten.
+
+Ni ska använda GitHub och ni förväntas arbeta enligt GitHub Flow.
+
+
+
+## Ceremonier (ceremonies)
+
+Scrum definierar fyra återkommande händelser. Varje händelse har ett tydligt syfte och en rekommenderad tidsgräns (*timebox*).
+
+### Sprint
+
+En sprint är en fast tidsperiod — vanligtvis 1–4 veckor — inom vilken teamet arbetar mot ett tydligt mål. Sprinten är grundenheten i Scrum: allt planeras, utförs och utvärderas inom sprintens ramar.
+
+**I kursen** är sprintar ungefär två veckor långa och löper från Sprint 1 till Sprint 4. Sprint 0 används för att komma igång med verktyg, roller och planering.
+
+### Sprint Planning
+
+I början av varje sprint håller teamet ett planeringsmöte där man bestämmer vad som ska göras och hur. Resultatet är en sprint backlog med user stories och tillhörande tasks.
+
+**I kursen** förväntas ni dokumentera er planering och lämna in en estimering tidigt i sprinten.
+
+
+
+### Daily Scrum
+
+Ett kort dagligt möte (max 15 minuter) där teamet synkroniserar sig: Vad gjorde jag igår? Vad gör jag idag? Finns det några hinder?
+
+**I kursen** finns inget krav på att ni gruppen har dagliga möten, men ni förväntas hålla löpande kontakt inom gruppen och ha koll på varandras arbete. 
+Hur ni synkroniserar er är ert val. Daily scrum (eller standup som det ibland kallas) är en stark rekommendation.
+
+
+
+### Sprint Review
+
+I slutet av sprinten demonstreras och granskas det som byggts. Syftet är att få återkoppling och säkerställa att arbetet stämmer med förväntningarna.
+
+**I kursen** sker detta dels via de obligatoriska handledarmötena, dels genom de inlämningar ni gör i slutet av varje sprint.
+
+
+
+### Sprint Retrospective
+
+Efter review håller teamet en retrospektiv: Vad gick bra? Vad kan förbättras? Vad gör vi annorlunda nästa sprint?
+
+**I kursen** är reflektionstexten som lämnas in tillsammans med varje sprint er retrospektiv. Använd den på allvar — det är ett tillfälle att faktiskt förbättra ert sätt att arbeta.
+
+
+
+
+## Scrum i kursen — en sammanfattning
+
+<Image src={scrum_img} alt="iterative process in sprints" />
+
+| Scrum-element | Hur det ser ut i kursen |
+|---|---|
+| Product Backlog | Kravspecifikationen för CoEd → era user stories |
+| Sprint Backlog | GitHub Projects / Trello + estimering |
+| Increment | Enligt instruktioner i slutet av sprinten |
+| Sprint Planning | Planering och estimering dokumenteras i sprint-instruktionen |
+| Daily Scrum | Löpande synkronisering inom gruppen (ni bestämmer form) |
+| Sprint Review | Leverenas och sprintinlämning |
+| Sprint Retrospective | Reflektionstext per sprint |
+
+
+
+## Varför Scrum?
+
+Agila metoder som Scrum används brett i industrin just för att de hanterar en grundläggande utmaning i mjukvaruutveckling: **krav och förutsättningar förändras**. 
+Istället för att försöka planera allt i förväg arbetar man i korta cykler, levererar tidigt och anpassar sig kontinuerligt.
+
+Att jobba med Scrum-inspirerade metoder i kursen ger er erfarenhet av ett arbetssätt ni med stor mycket sannolikhet kommer att möta i arbetslivet — och en förståelse för *varför* det fungerar, inte bara *hur* det går till.
+
+
+
+:::note[Läsanvisningar]
+- [Kap 2 i kurslitteraturen](https://softengbook.org/chapter2) och i synnerhet stycket om Scrum.
+- [The Scrum Guide](https://scrumguides.org/scrum-guide.html) — det officiella och kortfattade Scrum-ramverket
+- [Henrik Kniberg — Scrum and XP from the Trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/) — bra introduktion med exempel
+- [Atlassian: What is Scrum?](https://www.atlassian.com/agile/scrum) — kort och koncist
+:::

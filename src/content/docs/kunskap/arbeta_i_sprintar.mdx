@@ -1,0 +1,129 @@
+---
+title: Att arbeta i sprintar
+description: en iterativ process
+---
+
+import { Image } from 'astro:assets';
+import sprints_img from '../../../assets/sprints.png';
+
+<Image src={sprints_img} alt="iterative process in sprints" />
+
+
+Kursen är uppbyggd kring ett iterativt arbetssätt där arbetet delas upp i sprintar. 
+Varje sprint är en iteration, en cykel, och följer samma grundläggande delar (eller ceremonies som det ibland kallas): planera, genomföra, leverera och reflektera. 
+Det är denna cykel som driver projektet framåt och som ni som grupp kommer att upprepa och förfina under kursens gång.  
+
+Det finns ett par saker att ha i åtanke innan vi går in på detaljerna:  
+
+- Första och sista sprinten skiljer sig i upplägget – de är en vecka långa, den första är förberedande och den sista avslutande. Vad ni arbetar med i dessa sprintar skiljer sig något mot de längre, två veckor långa sprintarna.
+- För varje sprint ska inlämningar göras i form av grupp-gemensamma och individuella uppgifter – det är därför viktigt att ni inför varje sprint håller er uppdaterade om informationen och kraven som gäller för den på kursens site.
+- Kravspecifikationen kan komma att uppdateras. Håll er uppdaterade i gruppen.
+
+
+
+## Sprint planning – förberedande arbetet
+
+Utgå ifrån kravspecifikationen och formulera ett första antal user stories utifrån.  
+Initialt är inte målet är att skriva stories för alla krav i kravspecen på en gång – det är förmodligen inte möjligt eller önskvärt. 
+Fokusera på att få fram tillräckligt många väldefinierade stories för att kunna planera sprinten.  
+Hur många user stories som är tillräckligt beror på hur många krav man utgår ifrån, men det finns ingen fast övre eller undre gräns. 
+Ett sätt att förhålla sig till detta är när ni kommer till estimering av hela user storyn eller dess tasks - om estimerad tidsåtgång blir för lite under innevarande sprint finns det anledning att tillverka fler user stories.  
+Det är också helt ok att under sprintens gång i gruppen ta fram fler stories vid behov - eller förändra befintliga.
+Första gången ni tar fram user stories är det dessutom bra om gruppen får en grov bild av vad projektet innebär i stort. 
+
+Det är helt ok att vissa user stories, som ligger längre fram i tiden, är vaga i det här skedet - ni kan arbeta med dessa senare. 
+Vissa user stories kan också tillåtas vara vaga i den mening att i nuläget är dessa för stora eller komplexa (epic) - de behöver arbetas med mer och brytas upp i mindre stoies senare.  
+Det är rekommenderat att gruppen är överens om vilka stories som ska arbetas med först.
+
+Som sagt är det rekommenderat att ni dokumenterar dessa stories i ert projektverktyg (GitHub Project, Trello, Clickup, Linear, Notion, Azure DevOps eller liknande).  
+Det är kanske också nödvändigt med exempelvis Google docs, Excel eller till exempel Word, som ett steg före man placerar arbetsuppgifterna i ett verktyg. 
+Det viktiga är att inte glömma bort att sprint backlogs i början och slutet ska dokumenteras är en del av uppgifterna som ingår i kursens examination.  
+
+Oavsett hur ni arbetar med user stories, så skapar ni med all sannolikhet en lista med stories, som då fungerar naturligt som en product backlog – en backlog som ni underhåller under hela kursen.  
+Notera att det inte är ett krav att ni har en product backlog, men det blir förmodligen mer omständligt utan. En backlog för respektive sprint, sprint backlog, måste dock som sagt finnas och dokumenteras i starten och sluten av sprinten.
+
+User stories ska numreras enligt konventionen ```US-XXX```, där första siffran anger planerad sprint och de två sista blir ett “löpnummer” (t.ex. ```US-101``` planeras för sprint 1, ```US-201``` för sprint 2).
+
+
+
+## Backlog-grooming – håll backloggen levande
+
+Angående begreppet backlog, och som ett viktigt tillägg, så är det viktigt att nämna backlog-grooming (även kallat backlog refinement). 
+
+Detta innebär att ni löpande underhåller er backlog. Det handlar om att formulera nya stories när kravspecifikationen analyseras djupare, uppdatera eller ta bort stories som inte längre är relevanta, förfina acceptanskriterier, och om behov finns, göra grova uppskattningar inför kommande sprintar.
+
+Grooming sker löpande vid behov mellan sprintarna – inte bara vid sprint planning – och är det som gör att backloggen blir ett användbart verktyg snarare än en statisk lista som skapades en gång och sedan glömdes bort. 
+I praktiken innebär det att ni varje sprint både hämtar stories från backloggen och tillför nya utifrån kravspecen.
+
+
+
+## Sprint planning – bygg sprint backlogen
+
+Inför varje sprint ska ni alltså välja eller skapa ni de user stories ni åtar er att slutföra. 
+Dessa bildar sprint backlog (för aktuell eller kommande sprint). 
+Sprint backlogen är ett krav i kursen och ska finnas dokumenterad för varje sprint (sprint 1 och framåt – sprint 0 undantas).
+
+Vid sprint planning:
+
+- Välj eller skapa stories. Ni kan utgå ifrån prioritet i kravspecifikationen och/eller er bedömning av till exempel behov eller kapacitet
+- Formulera vid behov nya stories direkt från kravspecen om existerande backlog inte räcker till
+- Bryt ner varje story i konkreta tasks – små, avgränsade arbetsuppgifter
+- Tilldela tasks till gruppmedlemmar
+- Estimera varje task i antal timmar – uppskattningen behöver inte vara exakt, men den tvingar er att tänka igenom arbetet och ger underlag för att bedöma om sprinten är rimligt planerad
+- User stories (och tasks kopplade till dessa) som inte hann färdigställas i föregående sprint lyfts vid behov in i nästa
+
+Dokumentera sprint backlogen i er gruppdokumentation vid sprintstart – till exempel ett screenshot av backlogen i ert verktyg räcker.
+
+
+
+### Under sprinten – håll sprint backlogen levande
+En sprint backlog är inte statisk. Uppdatera tasks allt eftersom arbetet fortskrider – markera vad som är påbörjat, klart eller blockerat. Kommunicera behov av förändringar i gruppen, exempelvis om en task visar sig ta betydligt längre tid än estimerat är det värdefullt att kommunicera, uppdatera och dokumentera det – avvikelser från estimat är ett bra underlag för sprint retrospective.
+
+
+
+## Sprint review och sprint retrospective
+
+Vid sprintens slut håller ni en **sprint review** tillsammans, där ni utvärderar vad som blev klart mot det arbete som planerats. 
+Ett underlag för det är user stories och dess acceptance criterias.   
+Syftet är att stämma vad som faktiskt levereras utifrån utfört arbete.  
+
+Följ upp med **sprint retrospective** där ni reflekterar kring samarbete, kommunikation och process.   
+Syftet är att ert samarabete och process ska förbättras och effektiviseras.
+Här nedan är ett förslag på vad ni i gruppen kan utgå ifrån under review respektive retrospective. 
+
+**Sprint review - vad som levererades**
+
+- Visa och demonstrera för varandra vad ni har gjort - kör applikationen och diskutera.
+- Vilka user stories slutfördes och vilka slutfördes inte?
+- Vad är förklaringen till eventuella avvikelser mot planen?
+- Vad är er bedömning av kvaliteten på det som levererades?
+
+
+**Sprint retrospective - hur det levererades**
+
+- Vad fungerade bra och ska fortsätta?
+- Vad fungerade dåligt och ska förändras?
+- Vad ska ni prova i nästa sprint?
+- Ett starkt tips är att ni är konkreta. "Vi kommunicerade dåligt" är inte tillräckligt – vad var problemet exakt, och vad ska ni göra annorlunda?
+
+Review och retrospective slutför en iteration av utfört arbete i en sprint. 
+En iteration har slutförts.   
+Nu är det dags att börja om från början med sprint planning inför kommande sprint.
+
+
+
+:::note[Läsanvisningar]
+**Sprints och sprint ceremonies**
+
+
+kurslitteraturen:
+- [kap 2 Processes](https://softengbook.org/chapter2)
+- i synnerhet [2.4 som handlar om Scrum inklusive planning, review etc](https://softengbook.org/chapter2#scrum)
+
+följande artiklar från Atlassian: 
+- [Scrum sprints](https://www.atlassian.com/agile/scrum/sprints), [Sprint planning](https://www.atlassian.com/agile/scrum/sprint-planning), [Ceremonies](https://www.atlassian.com/agile/scrum/ceremonies), 
+[Backlogs](https://www.atlassian.com/agile/scrum/backlogs)
+- [Sprint Reviews](https://www.atlassian.com/agile/scrum/sprint-reviews), [Standups](https://www.atlassian.com/agile/scrum/standups), 
+[Retrospectives](https://www.atlassian.com/agile/scrum/retrospectives)
+- [Scrum metrics](https://www.atlassian.com/agile/scrum/scrum-metrics), [Backlog refinement](https://www.atlassian.com/agile/scrum/backlog-refinement)
+:::

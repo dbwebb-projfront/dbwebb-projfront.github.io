@@ -1,0 +1,278 @@
+---
+title: User stories & tasks
+description: från kravspec till konkretiserade tasks
+---
+
+
+Kravspecifikationen beskriver vad systemet ska göra – men den beskriver inte hur arbetet ska organiseras eller genomföras. 
+
+Det är gruppens uppgift att tolka kraven och bryta ned dem i konkreta, hanterbara uppgifter. Det är detta arbete som omvandlar en specifikation till faktisk leverans.
+
+Förenklat sker det i tre steg:
+
+```Kravspecifikation -> User stories -> Tasks + Acceptance criteria``` 
+
+Nedanstående text beskriver hur ni kan ta er an det arbetet. 
+
+
+
+## User stories
+
+Utgå från kravspecifikationens krav och formulera user stories som beskriver funktionalitet ur ett användarperspektiv.   
+En user story har formen:
+*Som [roll] vill jag [göra något] så att [värde/syfte]*.  
+
+Varje user story bör också ha *acceptanskriterier* – konkreta villkor som måste vara uppfyllda för att storyn ska anses klar.
+
+Det är en rekommendation att ni dokumenterar era user stories i ert projektverktyg. 
+På så sätt fungerar listan naturligt som en product backlog – även om det inte är ett formellt krav i kursen att ha en sådan.
+
+
+
+### Namngivning och numrering av user stories
+
+User stories namnges enligt följande konvention:
+
+```US-[sprint][löpnummer]``` 
+
+- Första siffran anger sprint (1–4)
+- Efterföljande två siffror är ett löpnummer inom sprinten
+
+Exempel:
+
+- ```US-101``` – första user story i sprint 1
+- ```US-102``` – andra user story i sprint 1
+- ```US-201``` – första user story i sprint 2
+
+Ett tips är att alltid ange vilket krav i kravspecifikationen user storyn härrör från, t.ex. Krav 2.1.3. 
+
+Lägg gärna till den informationen för en story. Det gör det möjligt att spåra vad som implementerats och mot vilket krav.
+
+
+
+## Tasks - nedbrytning till konkreta uppgifterna
+
+Varje user story bryts ned i konkreta tasks – avgränsade arbetsuppgifter som kan genomföras av en person under en eller kanske ett par dagar.   
+Utgångspunkten är att en task ska vara tillräckligt liten för att kunna estimeras och följas upp.
+
+Exempel på tasks för en fiktiv story, ```US-101```:
+
+- Skapa NewDocument-komponent
+- Koppla komponent till API-endpoint
+- Skriva enhetstester för komponenten
+- Uppdatera routing
+- Lägg till middleware för autenticering
+
+Varje task tilldelas en ansvarig gruppmedlem och en tidsestimering.  
+
+I de fall en task bedöms vara så pass komplex att flera gruppmedlemmar ska tilldelas, så kan det vara ett tecken på att ytterligare nedbrytning behöver göras - målet är att det framgår vad var och en förväntas arbeta med.
+
+Ibland finns arbetsuppgifter som måste tas om hand och som inte kan kopplas direkt till en user story eller ett funktionellt krav i en kravspecifikation. 
+
+Med andra ord; självfallet behöver arbete utföras men som inte “syns direkt” i leveransen. 
+
+Några exempel på kategorier dessa typer av tasks tillhöra:
+
+- **Spike**  
+    en tidsbegränsad undersökning för att minska osäkerhet. Används när gruppen behöver ta reda på om något är tekniskt möjligt, eller hur ett bibliotek fungerar, innan man kan estimera eller implementera en user story. En spike resulterar i kunskap, inte i färdig kod.
+
+- **Tech debt**  
+    beslut och “short-cuts” som tagits för att leverera i tid eller snabbt, men som behöver åtgärdas senare. Det kan handla om kod som fungerar men är svår att underhålla, saknad felhantering eller en temporär lösning som behöver ersättas. Tech debt är inte ett misslyckande – det är ett aktivt val som ska dokumenteras och hanteras, inte ignoreras.
+
+- **Bugfix**  
+    ett fel som upptäcks och behöver åtgärdas, men som inte är kopplat till en pågående user story.
+
+Dessa task-typer bör synliggöras i er sprint backlog och estimeras på samma sätt som övriga tasks. 
+
+De är en del av er verkliga arbetsinsats och ska behandlas som det.
+
+
+
+## Acceptance criterias
+
+Acceptance criteria definierar när en user story är klar – inte när koden är skriven, utan när funktionaliteten faktiskt fungerar som avsett.
+
+Exempel för ```US-101```:
+
+- En inloggad användare kan klicka på "Nytt dokument" och ett tomt dokument skapas
+- Dokumentet är synligt i användarens dokumentlista direkt efter skapande
+- En användare som inte är inloggad kan inte skapa dokument
+
+Skriv acceptance criteria som testbara påståenden – antingen stämmer det, eller så stämmer det inte.
+
+
+
+## Estimering
+
+Varje task bör estimeras i timmar innan sprinten börjar, eller åtminstone innan arbetet med uppgiften påbörjas.  
+
+Estimering är svårt – poängen är inte att träffa rätt utan att tänka igenom arbetet i förväg och lära sig av avvikelser.
+Estimeringen är också ett sätt att förhålla sig till er tidsbudget. 
+Varje gruppmedlem har ett begränsat antal timmar per vecka, och en sprint kan inte innehålla mer arbete än vad gruppen faktiskt hinner med.  
+
+Om ni konsekvent över- eller underestimerar är det ett mönster att ta upp i retrospektivet. Läs mer om tidsbudgeten som begrepp i bakgrundsdokumentet om kursens arbetssätt.
+
+För att underlätta estimering, samt att skapa en gemensam förståelse, av en tas, user story används ibland _planning poker_.  
+Planning poker kan vara värt att ta reda på mer om. Se i läsanvisningarna längst ned på sidan.
+
+
+
+## Exempel User stories
+
+:::note[Notera]
+User stories, tasks etc bör läggas i ett verktyg såsom Trello, GitHub projects eller liknande.  
+:::
+
+
+Här är ett antal exempel på hur en user stories, nedbrutna i tasks, och acceptance criteria skulle kunna se ut. 
+
+De två första exemplen är härleds från samma krav (2.2.2) – vilket är ett bra exempel på att ett krav kan ge upphov till flera stories. 
+I detta fallet är “sökning” utbruten som en egen story med lägre prioritet (kravet säger "eventuellt sökbar" vilket kan göra det tvetydigt och en poäng med att prioritera just sökning lägre - det andra bör blir färdigt först).  
+Poängen med att lyfta fram just detta är - det är inte alltid en 1:1 mappning mellan krav och stories.
+
+Sista exemplet är inte kopplat till ett specifikt krav i en kravspecifikation - den har tillkommit utefter ett behov som inte är direkt kopplat till ett krav.
+
+Alla exemplen skrivs på lite olika form och notation, för att poängtera att det är ok att göra så - bara det är tydligt och att gruppen är överens.
+
+Från kravspecifikationen:
+
+**2.2.2 Lista filer**  
+**Prioritet:** Hög
+
+Användare ska kunna se en översikt över alla sina filer.
+
+- Användare ska se alla sina filer (ägda + delade)
+- Listan ska visa relevant metadata (titel, språk, senast ändrad, skapare)
+- Listan ska vara sorterbar och eventuellt sökbar
+- Användare ska kunna öppna filer genom att klicka på dem
+- Visuell indikation på vilka filer som är delade
+
+
+**US-101 Visa fillista**:
+
+```
+US-101  VISA FILLISTA
+---------------------------------------------------------
+Kravspecifikation 2.2.2 – Lista filer 
+Prioritet: Hög
+---------------------------------------------------------
+
+Som inloggad användare vill jag se en översikt över alla 
+mina filer så att jag enkelt kan hitta och öppna dem.
+
+---------------------------------------------------------
+
+Acceptance criterias:
+- Ägda och delade filer visas i listan
+- Varje fil visar titel, språk, senast ändrad och skapare
+- Filer som är delade har en tydlig visuell indikation
+- Listan går att sortera på minst ett metadatafält
+- Användaren kan öppna en fil genom att klicka på den
+
+Tasks:
++-----------------------------------------------------+
+| Uppgift                        | Estimat | Ansvarig |
+|--------------------------------|---------|----------|
+| Skapa FileList-komponent       |  ~3h    | @mattias |
+| Hämta filer via API            |  ~4h    | @bernt.  |
+| Rendera metadata per fil       |  ~2h    | @emil    |
+| Implementera sortering         |  ~3h    | @paul    |
+| Visuell markering delade filer |  ~1h    | @ansgar  |
+| Klick navigerar till editor    |  ~2h    | @bjarne  |
++-----------------------------------------------------+
+
+Estimerad tid: 15h
+```
+
+**US-102 Söka bland filer**
+
+```
+US-102 | SÖKA BLAND FILER
+---------------------------------------------------------
+Kravpsecifikation: 2.2.2 – Lista filer 
+Prioritet: Hög, stretch-goal
+---------------------------------------------------------
+
+Som inloggad användare vill jag kunna söka bland mina filer 
+så att jag snabbt hittar rätt fil även när listan är lång. 
+
+---------------------------------------------------------
+
+Acceptance criterias:
+- Ett sökfält finns tillgängligt i fillistan 
+- Listan filtreras i realtid eller vid sökning
+- Sökning sker på minst filtitel
+- Inga resultat ger ett tydligt meddelande till användaren 
+
+Tasks: 
+[] Lägg till sökfält i FileList-komponenten  1h @bo 
+[] Implementera filtreringslogik  2h @mattias 
+[] Hantera och visa tomt sökresultat  1h @emil 
+
+Estimerad tid: 4h
+```
+
+**US-201 Skapa ny fil (ej kopplat till krav)**
+
+```
+US-201 | Skapa ny fil 
+---------------------------------------------------------
+Kravspec: (ej kopplat till specifikt krav) 
+---------------------------------------------------------
+
+Beskrivning:
+
+Som inloggad användare vill jag kunna skapa en ny fil så att jag kan börja skriva kod i editorn. 
+
+---------------------------------------------------------
+
+Acceptanskriterier:
+
+- Det finns ett tydligt sätt att skapa en ny fil
+- Användaren anger filnamn och extension
+- Filen sparas och visas direkt i fillistan 
+- Användaren navigeras till editorn med filen öppen, efter skapandet 
+
+Tasks: 
+[ ] Skapa CreateFile-modal/formulär, 2tim @ove 
+[ ] Validera inmatning (namn, språk), 1tim @kenneth 
+[ ] Anropa API för att skapa fil, 3tim @emil 
+[ ] Navigera till editor efter skapande, 1tim @lars-göran
+[ ] Uppdatera fil-listan utan omladdning, 2tim @masse 
+
+Estimerat: 9h 
+````
+
+
+## Till sist - Definition of Done
+
+**Definition of Done** (DoD) är inte ett krav i kursen men det tas upp här för att det har ett praktiskt värde och är en rekommendation. 
+DoD är en gemensam överenskommelse i ett team om vad som gäller för att något ska anses färdigt.  
+Se DoD som en slags checklista som kan användas på olika nivåer. 
+Det underlättar i många fall arbetet för varje gruppmedlem samt säkerställer en struktur och process att följa. 
+DoD för en task kan ses som en checklista för att uppgiften är färdigställd från skriven källkod till code review och att den är mergad till main, det vill säga att det är en leverans i sprinten. 
+Det är en rekommendation att ni använder DoD men inget krav. 
+Om ni använder DoD - sätt er DoD tidigt och håll er till den.
+
+**En rimlig DoD på task-nivå:**
+- Felhantering implementerad
+- Koden är skriven och fungerar lokalt
+- En annan gruppmedlem har gjort code review via PR
+- Koden är mergad till main
+
+**På user story-nivå kan DoD vara följande tillägg:**
+- Samtliga tasks är klara
+- Alla acceptance criteria är uppfyllda
+- Ingen känd bugg kvarstår
+
+
+
+:::note[Läsanvinsingar]
+
+User stories
+- [kap 3](https://softengbook.org/chapter3) och i synnerhet [kap 3.3 om User Stories](https://softengbook.org/chapter3#user-stories)
+
+Planning poker
+- [Mountaingoat software om planning poker](https://www.mountaingoatsoftware.com/agile/planning-poker)
+
+:::
