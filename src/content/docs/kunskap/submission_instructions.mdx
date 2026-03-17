@@ -1,0 +1,176 @@
+---
+title: Inlämning av sprint
+description: Instruktioner för gruppgemensam och individuell inlämning vid sprintens slut
+---
+
+
+
+Varje sprint avslutas med två inlämningar: en gruppgemensam och en individuell per
+gruppmedlem. Den gruppgemensamma görs som ett Pull Request i gruppens repo. 
+
+
+**SE ÖVER FORMULERINGEN ->** 
+Den individuella lämnas in via kursens lärplattform.
+
+---
+
+:::note[Glöm inte]
+Dokumentera er sprint backlog vid sprintens **början**. Det är viktigt att ni fångar
+tillståndet innan arbetet startar. Gör det med screenshots eller liknande och inkludera
+det i slutinlämningen.
+:::
+
+---
+
+
+## Gruppgemensam inlämning
+
+### Vad som ska ingå
+
+#### 1. Källkod och teknisk implementation
+
+Inlämningen görs som ett Pull Request (via en submission branch) och ska innehålla:
+
+- Uppdaterad källkod med alla ändringar från sprinten
+- `README.md` med projektbeskrivning, setup-instruktioner, deployment-länk (när
+  tillämpligt) samt teknisk stack och beroenden
+- Koden ska vara körbar i största möjliga mån
+- Inga lösenord, API-nycklar eller secrets i koden
+
+#### 2. Sprint planning-dokumentation
+
+Format: Markdown-fil
+
+Dokumentera er sprint backlog **vid sprintens start**, efter sprint planning.
+Följande ska framgå tydligt:
+
+- **Sprint-mål** – vad är huvudmålet för denna sprint? (1–2 meningar)
+- **Valda user stories** – vilka user stories har ni valt att arbeta med?
+- **Tasks** – nedbrytning av user stories i konkreta arbetsuppgifter
+- **Fördelning** – vem ansvarar för vad?
+- **Estimering** – hur många timmar per task?
+- **Acceptanskriterier** – ska vara synliga för varje user story
+
+Använd gärna screenshots från ert backlog-verktyg, PDF eller markdown.
+
+#### 3. Leveransdokumentation
+
+Format: Markdown-fil
+
+Dokumentera er sprint backlog **vid sprintens slut**. Följande ska framgå tydligt:
+
+- **Färdigställda user stories** – vad levererades faktiskt under sprinten?
+- **Tasks** – vilka tasks färdigställdes?
+- **Fördelning** – vem ansvarade för vad?
+- **Tidsutfall** – hur många timmar användes per task?
+- **Definition of Done** – vad krävdes för att en story skulle anses klar?
+
+Komplettera gärna med text som förtydligar och förklarar.
+
+---
+
+### Hur man gör en inlämning
+
+Instruktionerna nedan gäller samtliga sprintar. Exakt vilket material som ska ingå kan
+skilja sig åt per sprint – håll er uppdaterade på respektive sprints instruktioner.
+
+
+#### Submission-branch och PR
+
+I slutet av varje sprint skapar ni en branch som ni namnger `submission-sprint-X`,
+där X är sprintnumret (0, 1, 2, 3, 4 eller 99). Uppdatera `docs/`-katalogen med
+dokumentation för aktuell sprint och öppna sedan ett Pull Request mot `main`.
+
+Lärare granskar och mergar – **ni ska inte merga PR:et själva**. Vid behov av
+komplettering sker detta via kommentarer i PR:et. Ni kan påbörja nästa sprint även
+om föregående submission-branch ännu inte granskats.
+
+#### Checklista innan inlämning
+
+- [ ] `docs/sprint-X.md` är ifylld med innehåll under samtliga rubriker
+- [ ] Backlog-screenshots (start och slut) finns i `docs/images/` och länkas från
+      `sprint-X.md`
+- [ ] All kod är committad och pushad till `main`
+- [ ] Koden är körbar
+- [ ] Inga lösenord eller secrets är committade
+- [ ] `README.md` är uppdaterad
+
+#### Steg för steg
+
+**Steg 1** – Se till att `main` är uppdaterad
+```bash
+git checkout main
+git pull origin main
+```
+
+**Steg 2** – Skapa submission-branch
+```bash
+git checkout -b submission-sprint-X
+```
+
+**Steg 3** – Pusha branchen
+```bash
+git push origin submission-sprint-X
+```
+
+**Steg 4** – Öppna ett Pull Request på GitHub mot `main` med titeln:
+```
+Inlämning Sprint X – [Gruppnamn]
+```
+Beskriv kort vad som ingår och skapa PR:et. Merga inte själva.
+
+---
+
+## Individuell inlämning
+
+Varje gruppmedlem lämnar in en individuell reflektion efter varje sprint.
+
+- **Format:** Markdown
+- **Längd:** max 1 sida (ca 300 ord)
+- **Inlämning:** via kursens lärplattform
+
+Använd nedanstående rubriker som utgångspunkt.
+
+### 1. Mitt bidrag denna sprint
+
+- Vilka tasks/user stories arbetade jag med?
+- Kod jag skrev (referera gärna till commits eller PRs)
+
+### 2. Tekniskt lärande
+
+Vad lärde jag mig tekniskt denna sprint?
+
+### 3. Processmässigt lärande
+
+- Hur fungerade samarbetet med gruppen?
+- Vad tar jag med mig till nästa sprint?
+
+### 4. Självbedömning
+
+- Vad hade jag kunnat göra annorlunda?
+- Vilka personliga mål har jag för nästa sprint?
+
+---
+
+## Tips och verktyg
+
+### Dokumentation
+
+- Använd tydliga rubriker och var konkreta – undvik vaga formuleringar
+- Inkludera screenshots där de tillför något
+- Skriv så att någon utanför gruppen förstår
+- Alla dokument sparas i `docs/`-mappen i ert repo
+
+För individuella reflektioner: var ärlig och självkritisk, ge konkreta exempel från
+sprinten och fokusera på lärande – inte bara på vad du producerade.
+
+### Verktyg
+
+- **Backlog-verktyg** (Trello, GitHub Projects m.fl.) – om möjligt exportera som text, eller screenshot
+- **Miro/FigJam** – eventuella retrospective-boards kan exporteras som bild
+- **Markdown-editors** – VS Code, Zed eller valfri editor
+
+### Namngivning av user stories
+
+Använd löpnummer på era user stories så att de enkelt kan spåras mellan sprint och
+backlog. Se krav och instruktioner på sidan [User stories & tasks](/kunskap/user_stories_tasks/#namngivning-och-numrering-av-user-stories).
