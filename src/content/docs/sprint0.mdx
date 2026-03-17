@@ -4,8 +4,104 @@ description: Instruktioner för sprint 0.
 ---
 
 
-##
+:::danger[Under konstruktion]
+Materialet på den här sidan är inte komplett och uppdateras löpande.
+:::
+
+---
+
+Sprint 0 är en förberedande sprint, en “setup” och en vecka lång.   
+Ni kodar inte produkten ännu – istället handlar det om att etablera teamet, förstå uppdraget och sätta upp den infrastruktur 
+ni kommer att arbeta i under resten av kursen. 
+
+En väl genomförd sprint 0 ger er ett stabilt fundament och minskar friktionen i de sprints som följer.
+Under den här sprinten ska ni läsa in er på kurslitteraturen, bekanta er med kravspecifikationen, göra viktiga tekniska och 
+metodologiska val, samt sätta upp ert gemensamma repository. 
+
+Nedan hittar ni vad som förväntas av er under detta inkrement av projektet och kursen.
+
+## Labbmiljö - forka repo
+
+Kursen använder ett GitHub-repository i kursens organisation som central plats för er tekniska implementation och er gruppgemensamma dokumentation. 
+Ni forkar ett startrepo som kursledningen skapat i organisationen.
+
+Repot har följande struktur:
+
+```
+starter/
+  ├── [teknisk implementation i roten – React-app etc]
+  ├── README.md
+  └── docs/ # gruppgemensam dokumentation
+        ├── sprint-0.md
+        ├── sprint-1.md
+        ├── sprint-2.md
+        ├── sprint-3.md
+        ├── sprint-4.md
+        ├── sprint-99.md
+````
+
+Katalogen ```docs/``` ska innehålla er gruppgemensamma dokumentation. För varje sprint lämnar ni in en sprint-X.md i denna katalog, med det innehåll som specificeras för respektive sprint.
+```README.md``` i roten ska innehålla en kort beskrivning av projektet och instruktioner för hur man kör applikationen lokalt.
+
+
 
 ## Övningar
 
-[Path of Least resistance](kunskap/path_of_least_resistance.mdx)
+Rekommenderade övningar och förberedelser för kommande sprintar finns här:
+
+[Path of Least resistance](/kunskap/path_of_least_resistance)
+
+
+
+## Uppgifter
+
+Sprint 0 har två inlämningar: en gruppinlämning via ert GitHub-repo och en individuell inlämning via Canvas.
+Det förutsätts att gruppen har forkat repot och det är tillgängligt för alla medlemmar (enligt instruktioner i Setup ovan).
+
+
+:::note[Deadline]
+- Inlämning av bägge uppgifterna ska ske senast dagen före sprint 1 startar.
+:::
+
+
+## Grupp-uppgift
+sker i repot för och i katalogen docs. För denna första sprint ska gruppens inlämning göras i filen ```docs/sprint-0.md```.
+
+Skapa filen docs/sprint-0.md i ert repo. 
+Filen ska innehålla följande rubriker och innehåll:
+1. **Gruppen**  
+- Gruppmedlemmarnas namn och GitHub-användarnamn.
+- Länk till ert GitHub-repo.
+- Länk till ert planeringsverktyg (GitHub Projects, Trello eller annat).
+
+2. **Tekniska val**. 
+- Valt frontend-ramverk och motivering (även om ni väljer det rekommenderade).
+- Valt kodeditor-bibliotek och motivering.
+- Eventuella andra tekniska val ni gjort eller diskuterat.
+
+3. **Initiala reflektioner kring kravspecifikationen**. 
+- Vad är oklart eller saknar tillräcklig detalj?
+- Finns det krav ni redan nu ser som komplexa eller riskfyllda?
+
+4. **Gruppens arbetssätt**. 
+- Hur planerar ni att kommunicera inom gruppen?
+- Hur ska ni fördela arbete?
+- Vilket planeringsverktyg har ni valt och varför?
+
+
+
+## Individuell inlämning
+Varje gruppmedlem lämnar in en kort individuell reflektion på **Canvas**. 
+
+Reflektionen ska behandla och vara ca 200-300 ord lång:  
+- Vad har du bidragit med under sprint 0?
+- Vad är din uppfattning om kravspecifikationen – vad känns tydligt, vad känns oklart?
+- Vad ser du som den största utmaningen för gruppen inför projektet?
+- Vad är din TIL för sprint 0?
+
+
+:::caution[VIKTIGT] 
+**Grupperna fastställs**   
+Gruppindelningen som kommunicerats betraktas som fastställd från och med dagen före starten för sprint 1. 
+Kontakta kursledningen omgående om det finns problem med er grupptillhörighet.
+:::

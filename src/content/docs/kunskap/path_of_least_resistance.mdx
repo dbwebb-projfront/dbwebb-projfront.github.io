@@ -1,5 +1,89 @@
 ---
 title: Path of Least Resistance
-description: Path of Least Resistance i kursen kopplat till stack
+description: rekommendationer och val
 ---
 
+:::danger[Under konstruktion]
+Materialet på den här sidan är inte komplett och uppdateras löpande.
+:::
+
+
+---
+
+_En central del av att arbeta i ett utvecklingsteam är att etablera en gemensam stack – de verktyg, ramverk och arbetssätt som teamet använder tillsammans. 
+En genomtänkt stack minskar friktion: alla vet vad som gäller, hjälp och exempel är lättare att hitta, och ni slipper uppfinna hjulet på nytt mitt i ett projekt.
+Kursen ger er en rekommenderad stack som utgångspunkt i form av rekommendationer ramverk, bibliotek, versionshantering och planeringsverktyg. 
+Det är kursens version av path of least resistance: välbeprövade val som kursen stödjer med exempel. 
+Att avvika är ett möjligt val, men innebär att ni själva tar ansvar för att navigera utan det stödet._
+
+
+
+### Ett pragmatiskt förhållningssätt
+
+_Path of least resistance_ kan beskrivas som ett pragmatiskt förhållningssätt i mjukvaruprojekt - “att välja den väg som ger minst friktion givet de förutsättningar som finns” – 
+inte nödvändigtvis den "bästa" lösningen i abstrakt mening, utan den som passar kontexten, teamets kompetens och projektets mål.
+I relation till kursens förekommande rekommendationer av till exempel React och Monaco, innebär att gruppen behöver ta ställning till och göra medvetna val som får konsekvenser.
+
+Kravspecifikationen, tillsammans med kursens övriga material, ger rekommendationer om bland annat teknik och gruppsamarbete. 
+Innan ni fattar beslut som grupp är det värt att undersöka alternativen och förstå vad ni väljer och varför. 
+Ha i åtanke att de exempel som tas upp under kursens gång, är utifrån rekommendationerna.
+
+Övningarna nedan är en direkt förberedelse för kommande sprint.
+
+Det ni tar reda på och eventuellt beslutar och kodar här kan ni ta med er vidare. 
+
+---
+
+
+
+### Övningar 
+
+**1. Ramverk – React eller annat?**  
+Kursen rekommenderar React som frontend-ramverk. Undersök vad React innebär i praktiken:
+- Vad är komponentbaserad arkitektur?  
+- Hur skiljer sig React från vanlig JavaScript eller en annan lösning ni känner till (t ex Web Components)?  
+- Finns det skäl för er grupp att välja ett alternativ?
+
+
+Syftet med den här övningen är inte att byta ramverk – det är att förstå varför ni väljer det ni väljer, och att alla i gruppen har en grundläggande gemensam bild. 
+
+Reacts egna dokumentation på [react.dev](https://react.dev/), särskilt ["Thinking in React"](https://react.dev/learn/thinking-in-react) som ger en bra ingång. 
+
+---
+
+**2. Kodeditor-bibliotek – Monaco**   
+Hela projektet är en kollaborativ kod-editor. Det innebär att ni behöver ett bibliotek som hanterar kodeditorns funktionalitet. 
+Kursen rekommenderar Monaco Editor (samma editor som ligger bakom VS Code).  
+- Utforska Monaco Editors dokumentation.  
+- Rekommenderat är att ni tillverkar ett enkelt proof-of-concept: kan ni få upp en Monaco-editor i en React-app?  
+
+[microsoft.github.io/monaco-editor/playground](https://microsoft.github.io/monaco-editor/playground?source=v0.55.1#example-creating-the-editor-hello-world) ger en bra ingång.
+
+---
+
+**3. Planeringsverktyg**   
+Ett team behöver ett gemensamt ställe att hålla koll på vad som ska göras, vad som pågår och vad som är klart.  
+I Scrum kallas detta för en backlog, och under kursens gång kommer ni att använda den för t ex sprint planning, transparens i gruppen och dokumentation vid inlämningar av uppgifter.  
+Det finns många verktyg för detta – Jira och Azure DevOps är vanliga i industrin, men för ett projekt av den här storleken är GitHub Projects eller Trello rimliga val.  
+GitHub Projects har fördelen att det lever nära er kod, medan Trello är enkelt, snabbt och intiutivt att komma igång med och dessutom visuellt tilltalande.  
+Undersök olika verktyg och välj det som passar er grupp - tänk på att det ska kunna hantera era user stories, tasks som är kopplat till sprint-planering och dokumentation av ert arbete.  
+Oavsett val är det en rekommendation att ni gör det nu, även om ni byter senare, och att verktyget är tillgängligt för samtliga gruppmedlemmar innan sprint 0 avslutas.
+
+---
+
+**4. Samarbete**  
+Diskutera också inom gruppen hur ni ska arbeta tillsammans utefter kursens krav och rekommendationer.  
+Påbörja tidigt en struktur som förenklar och skapar ett transparent samarbete.  
+Som förslag och inspiration kan ni i gruppen ta upp:  
+
+- Ska ni prova daily scrum?  
+- Mellan vilka tider kan vi förväntas vara anträffbara? 
+- Vad innebär "klar" för er? 
+- Hur hanterar ni hinder (blockers)? 
+- Hur ofta ska ni pusha kod?
+- Trello, GitHub project eller annat?
+
+Enkla överenskommelser tidigt minskar friktion senare – oavsett om ni kallar det ett teamkontrakt, en definition of done eller något annat.
+
+Som inspiration kan nämnas exempelvis delar ur 37Signals handbok för anställda - ["Employee handbook"](https://basecamp.com/handbook).  
+Samt i kursmaterialet finns [Om Scrum](/kunskap/scrum/#videoklipp) med två videoklipp av Henrik Kniberg hur Spotify organiserar sig.
