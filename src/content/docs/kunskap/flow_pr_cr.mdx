@@ -1,0 +1,242 @@
+---
+title: GitHub Flow, Pull Requests & Code Review
+description: Hur gruppen arbetar med branches, granskar varandras kod och använder Definition of Done som kvalitetsstöd
+---
+
+import { YouTube } from 'astro-embed';
+
+
+
+Att skriva kod är en del av arbetet – att granska och ta ansvar för varandras kod är en annan.  
+I professionell mjukvaruutveckling är pull requests och code review en självklar del av det dagliga arbetet, inte ett frivilligt tillägg.
+
+I den här kursen gäller samma sak: **ni förväntas arbeta med pull requests och code review inom gruppen under hela projektet**. Det är ett krav, inte en rekommendation.
+
+Den här artikeln förklarar hur GitHub Flow fungerar, vad som förväntas av er i samband med pull requests och code review, och hur ni kan använda er Definition of Done som ett konkret stöd i granskningsarbetet.
+
+
+
+## GitHub Flow
+
+GitHub Flow är ett enkelt och välbeprövat arbetsflöde för att hantera kod i team.  
+Det bygger på en grundprincip: `main` är alltid i ett körbart och leveransbart tillstånd, och allt nytt arbete sker i en kortlivad feature-branch.
+
+Förenklat ser flödet ut så här:  
+
+
+```
+Skapa branch → Arbeta & commita → Öppna PR → Code review → Merge till main
+```
+
+
+
+### Steg för steg
+
+:::note[Exempel]
+_notera att nedan exempel vad gäller namngivning av branches (som dock följer en vedertagen konvention) och commit meddelanden_ 
+_om ni föredrar annan konvention (håll er dock till github flow) såsom engelska för namngivning och meddelanden så är det helt ok_
+:::
+
+**1. Skapa en branch från `main`**  
+Varje ny feature, buggfix eller task får en egen branch. Ge branchen ett beskrivande namn.
+
+```bash
+git checkout main
+git pull
+git checkout -b feature/fillista
+```
+
+**2. Arbeta och commita löpande**  
+Commita ofta med tydliga meddelanden. En commit bör motsvara ett avgränsat steg i arbetet – inte en veckas arbete i en enda commit.
+
+```bash
+git add .
+git commit -m "Skapa FileList-komponent med grundläggande struktur"
+```
+
+**3. Öppna ett Pull Request mot `main`**  
+När en task eller feature är klar – eller om du vill ha tidig feedback – öppnar du ett PR på GitHub.  
+Beskriv kortfattat vad PR:en innehåller och länka till relevant user story eller task.
+
+**4. Code review**  
+En eller flera i gruppen granskar koden. Mer om detta nedan.
+
+**5. Merge till `main`**  
+När PR:en är godkänd mergas den in i `main`.
+
+_Branchen kan tas bort (commit-historik finns kvar), men det är optionellt att göra så._
+
+
+
+### Namngivning av branches
+
+Använd ett konsekvent namnmönster som gruppen kommer överens om tidigt. Ett vanligt mönster:
+
+| Typ | Exempel |
+|-----|---------|
+| Feature / user story | `feature/fillista` |
+| Buggfix | `fix/sortering-krasch` |
+| Spike / undersökning | `spike/monaco-editor-setup` |
+
+Kortfattade och beskrivande branch-namn gör det lättare att förstå vad som pågår i repot – både för er själva och för de som granskar.
+
+
+
+## Pull Requests
+
+Ett pull request (PR) är en begäran om att få in kod från en branch till `main`. Det är också den primära platsen för code review och diskussion kring koden.
+
+### Vad ett bra PR innehåller
+
+Ett PR ska inte bara vara "här är min kod" – det ska ge granskaren tillräcklig kontext för att förstå vad som gjorts och varför.
+
+En enkel mall att följa:
+
+```
+## Vad gör denna PR?
+Kort beskrivning av vad som implementerats eller åtgärdats.
+
+## Koppling till user story / task
+US-101 – Visa fillista
+
+## Hur kan det testas?
+Beskriv kort hur granskaren kan verifiera att det fungerar.
+
+## Övrigt
+Eventuella noteringar, kända begränsningar eller saker att diskutera.
+```
+
+Ni behöver inte använda exakt denna mall, men gruppen bör komma överens om en gemensam miniminivå för vad ett PR ska innehålla. Det underlättar granskningsarbetet avsevärt.
+
+### PR som inlämning
+
+Utöver de interna PR:arna som används i det dagliga arbetet används PR-mekanismen även för kursens sprintinlämningar.  
+Vid varje sprints slut skapar ni en branch `submission-sprint-X` från `main` och öppnar ett PR mot `main`. Det PR:et är er inlämning och granskas av kursledningen.
+
+Det interna arbetsflödet och inlämningsflödet är alltså samma mekanik – ni lär er verktyget på riktigt, inte i ett konstruerat skolmoment.
+
+
+
+## Code Review
+
+Code review innebär att en eller flera gruppmedlemmar granskar den kod som lämnats in i ett PR **innan** den mergas till `main`.  
+Det är ett av de mest effektiva sätten att hålla kodkvaliteten uppe, dela kunskap inom gruppen och fånga problem tidigt.
+
+### Vad du granskar
+
+En code review handlar inte om att hitta fel för felets skull. Det handlar om att:
+
+- **Förstå vad koden gör** – kan du följa logiken utan att behöva fråga?
+- **Kontrollera att det fungerar** – stämmer implementationen med user storyn och acceptanskriterierna?
+- **Ge konstruktiv feedback** – vad kan förbättras, och varför?
+- **Dela kunskap** – lyft det som är bra, inte bara det som behöver justeras
+
+### Hur du ger feedback
+
+Skriv kommentarer direkt i PR:et på GitHub, på relevant rad eller som en övergripande kommentar.  
+Håll tonen saklig och konstruktiv – ni granskar koden, inte personen.
+
+Några riktlinjer:
+
+- Förklara *varför* något bör ändras, inte bara *vad*
+- Ange tydligt om en kommentar är ett krav ("detta måste ändras innan merge") eller en tanke ("detta kan vara värt att diskutera")
+- Godkänn PR:en med ett tydligt "Approved" eller "LGTM" (Looks Good To Me) när den är redo
+
+### Vem granskar?
+
+Minst en annan gruppmedlem bör/ska granska och godkänna ett PR innan det mergas.  
+Det är den som öppnar/skapar PR:et som ansvarar för att granskning faktiskt sker – det händer inte per automatik.
+
+Prova gärna att rotera vem som granskar, så att alla i gruppen får erfarenhet av att granska olika delar av kodbasen.
+
+
+
+### Vad händer om granskaren hittar problem?
+
+Om ett PR inte uppfyller er Definition of Done, eller om granskaren har kommentarer som behöver åtgärdas, returneras PR:en.  
+Den som öppnat PR:et gör de nödvändiga ändringarna och ber om en ny granskning.
+
+Det är inte ett misslyckande – det är arbetsflödet som fungerar som det ska.
+
+
+
+## Definition of Done i code review
+
+Definition of Done (DoD) är ett krav i kursen och beskrivs mer utförligt i dokumentet om user stories och tasks.  
+Här fokuserar vi på hur DoD konkret kan koppla till era code reviews.
+
+DoD fungerar som en **checklista vid code review**. Istället för att granskaren ska avgöra godtyckligt om något är "klart" finns det en gemensam överenskommelse att förhålla sig till.
+
+**Praktiskt exempel:**  
+En grupp har definierat följande DoD på task-nivå:
+
+```
+Definition of Done – task-nivå
+
+[ ] Koden fungerar lokalt utan fel
+[ ] Felhantering är implementerad där det är relevant
+[ ] Koden följer gruppens kodkonventioner
+[ ] PR-beskrivningen förklarar vad som gjorts och kopplar till en user story
+[ ] Minst en annan gruppmedlem har granskat och godkänt PR:en
+[ ] Koden är mergad till main
+```
+
+När ett PR öppnas går granskaren igenom checklistan.  
+Om en punkt inte är uppfylld returneras PR:en – inte för att vara petig, utan för att teamet kommit överens om vad "klar" innebär. Det är precis så det fungerar i professionella team.
+
+
+
+### DoD reducerar friktion
+
+Utan en gemensam DoD uppstår lätt situationer där den som skrivit koden anser sig vara klar, medan granskaren har en annan uppfattning. Det kan skapa onödiga konflikter och förseningar.
+
+Med en etablerad DoD är friktionen lägre: ni diskuterar om checklistan är uppfylld, inte om vad som egentligen menas med "klar".
+
+
+
+### Revidera DoD vid behov
+
+Er DoD är inte huggen i sten. Om ni märker att den saknar viktiga punkter, eller innehåller saker som inte längre är relevanta, är retrospective ett bra tillfälle att revidera den.
+
+Dokumentera alltid er aktuella DoD – och se till att alla i gruppen känner till vad som gäller.
+
+
+
+## Sammanfattning – vad förväntas av er
+
+| Vad | Krav |
+|-----|------|
+| Arbeta i feature-branches enligt GitHub Flow | Ja |
+| Öppna PR mot `main` för varje task / feature | Ja |
+| Code review av minst en annan gruppmedlem | Ja |
+| Dokumenterad Definition of Done | Ja |
+| Använda DoD som stöd vid code review | Ja |
+| Sprint-inlämning via `submission-sprint-X`-branch och PR | Ja |
+
+
+
+:::note[Läsanvisningar]
+
+**GitHub Flow**
+- [GitHub Flow – officiell guide](https://docs.github.com/en/get-started/using-github/github-flow)  
+  Kort och tydlig genomgång av flödet direkt från GitHub.
+
+**Pull Requests och Code Review**
+- [About pull requests, GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+- [How to Do Code Reviews Like a Human](https://mtlynch.io/human-code-reviews-1/)  
+  Praktisk och välskriven guide om hur man ger och tar emot code reviews konstruktivt. Rekommenderas.
+- [Google Engineering Practices – Code Review](https://google.github.io/eng-practices/review/)  
+  Googles öppet publicerade interna riktlinjer för code review. Bra referens för den som vill förstå hur det fungerar i professionella team.
+:::
+
+
+
+## Videoklipp
+
+Vad är ett pull request och hur fungerar det i praktiken?
+
+<YouTube posterQuality="max" id="For9VtrQx58" />
+
+En genomgång av hur code review går till och vad man bör tänka på som granskare:
+
+<YouTube posterQuality="max" id="lSnbOtw4izI" />

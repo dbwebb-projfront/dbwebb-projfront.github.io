@@ -247,27 +247,42 @@ Estimerat: 9h
 ````
 
 
-## Till sist - Definition of Done
+## Definition of Done
 
-**Definition of Done** (DoD) tas upp här för att det har ett praktiskt värde och är en mycket stark rekommendation. 
-Intialt är det inget krav i kursen, men det kan komma att ändras.  
-DoD är en gemensam överenskommelse i ett team om vad som gäller för att något ska anses färdigt.  
-Se DoD som en slags checklista som kan användas på olika nivåer. 
-Det underlättar i många fall arbetet för varje gruppmedlem samt säkerställer en struktur och process att följa. 
-DoD för en task kan ses som en checklista för att uppgiften är färdigställd från skriven källkod till code review och att den är mergad till main, det vill säga att det är en leverans i sprinten. 
-Det är en rekommendation att ni använder DoD men inget krav. 
-Om ni använder DoD - sätt er DoD tidigt och håll er till den.
+Definition of Done (DoD) är ett krav i kursen.  
+DoD är en gemensam överenskommelse i teamet om vad som krävs för att en uppgift ska anses färdigställd. 
+Se det som en checklista som tillämpas konsekvent – den minskar tvetydighet, skapar en gemensam kvalitetsnivå och gör code reviews mer strukturerade och effektiva.
 
-**En rimlig DoD på task-nivå:**
-- Felhantering implementerad
+Ni bestämmer själva er DoD, men den ska vara dokumenterad och följas genomgående i projektet. 
+Sätt er DoD tidigt – påbörja gärna arbetet redan i Sprint 0, även om det inte är ett krav just då. 
+Revidera vid behov i förslagsvid i samband med retrospective.
+
+DoD är särskilt användbar vid interna PR och code reviews.  
+Den person som granskar en PR kan använda DoD som en konkret checklista:  
+är alla punkter uppfyllda innan mergen godkänns? Det skapar ett naturligt kvalitetsgrindar utan att det behöver bli en källa till konflikt – det är teamets gemensamma överenskommelse, inte en persons åsikt.
+
+**Vad kan ingå i en DoD?**
+
+Nedan följer exempel på vad en DoD kan innehålla på olika nivåer. Ni väljer vad som passar er grupp.
+
+På task-nivå handlar det typiskt om att koden är klar och granskad:
+
 - Koden är skriven och fungerar lokalt
-- En annan gruppmedlem har gjort code review via PR
+- Felhantering är implementerad där det är relevant
+- En annan gruppmedlem har genomfört code review via PR
 - Koden är mergad till main
 
-**På user story-nivå kan DoD vara följande tillägg:**
-- Samtliga tasks är klara
-- Alla acceptance criteria är uppfyllda
+På user story-nivå tillkommer ofta ett funktionellt perspektiv:
+
+- Samtliga tillhörande tasks är klara
+- Alla acceptanskriterier är uppfyllda
 - Ingen känd bugg kvarstår
+
+**Hur ni kan använda DoD i praktiken**
+När en PR öppnas internt i gruppen kan den som granskar gå igenom DoD-checklistan som en del av granskningen. 
+Om något saknas returneras/stängs PR:en – inte för att vara petig, utan för att teamet kommit överens om vad "klar" innebär. 
+Det är precis så det fungerar i professionella team.
+
 
 
 
@@ -275,6 +290,10 @@ Om ni använder DoD - sätt er DoD tidigt och håll er till den.
 
 User stories
 - [kap 3](https://softengbook.org/chapter3) och i synnerhet [kap 3.3 om User Stories](https://softengbook.org/chapter3#user-stories)
+
+DoD  
+- [Getting Started with a Definition of Done, The Scrum Guide](https://www.scrum.org/resources/blog/getting-started-definition-done-dod). 
+- [Definition of Done – Explanation and Example, The Scrum Guide](https://www.scrum.org/resources/blog/definition-done-dod-explanation-and-example)
 
 Planning poker
 - [Mountaingoat software om planning poker](https://www.mountaingoatsoftware.com/agile/planning-poker)
@@ -305,6 +324,11 @@ Tar upp begrepp och koncept kopplat till estimering, såsom t ex velocity m.m:
 
 <YouTube posterQuality="max" id="37zfyncCpkA" />
 
+Om DoD, en introduktion.
+<YouTube posterQuality="max" id="2MD5onpE6jg" />
+
+DoD != Acceptance criterias, självaste Mike Cohn har ordet.
+<YouTube posterQuality="max" id="Hq9O7mnUNM4" />
 
 Planning poker nämns i texten ovan. Här är en introduktion:  
 <YouTube posterQuality="max" id="cm3DbFo5bxY" />
