@@ -5,6 +5,7 @@ description: en approach för att komma igång med implementation
 
 import { Image } from 'astro:assets';
 import seventeen_img from '../../../assets/17.jpg'
+import australia_img from '../../../assets/australia.jpg'
 
 
 :::danger[Under konstruktion]
@@ -17,7 +18,7 @@ Materialet på den här sidan är inte komplett och uppdateras löpande.
 
 ### Övning: Happy path 
 
-**Syftet** med den här övningen är att ni ska lära er att bryta ner arbete i hanterbara delar och leverera något funktionellt innan ni förfinar det – och sedan medvetet hantera det som eventuellt kan gå snett eller bli fel. 
+**Syftet** med den här övningen är att ni ska blir medvetna om och lära er att bryta ner arbete i hanterbara delar och leverera något funktionellt _innan_ ni förfinar det – och sedan medvetet hantera det som eventuellt kan gå snett eller bli fel. 
 Det är ett arbetssätt som är hållbart, särskilt i långa projekt.
 
 ---
@@ -26,21 +27,25 @@ Det är ett arbetssätt som är hållbart, särskilt i långa projekt.
 
 #### Innan ni börjar koda
 
-Innan gruppen sätter sig och skriver den första raden kod är det värt att stanna upp och säkerställa att ni har en gemensam grund att stå på. Det handlar inte om att planera allt i detalj – det handlar om att undvika friktion som annars dyker upp mitt i en sprint.
+Innan gruppen sätter sig och skriver den första raden kod är det värt att stanna upp och säkerställa att ni har en gemensam grund att stå på. 
+Det handlar inte om att planera allt i detalj – det handlar om att undvika friktion som annars dyker upp mitt i en sprint.
 
 Några saker som bör vara på plats:
 
 **Teknisk setup**  
-Alla i gruppen ska kunna köra projektet lokalt. Det låter självklart, men det är vanligt att en halvdag försvinner för att någon inte har rätt version av Node, eller att miljövariabler saknas. Säkerställ att:
-- Repot är klonat och projektet startar utan fel hos samtliga
-- Ni vet hur ni kommunicerar med det tillhandahållna API:et (hur autentisering fungerar, vilka endpoints som finns)
-- Er utvecklingsmiljö är konsekvent – samma verktyg, samma versioner
+Alla i gruppen bör kunna köra projektet lokalt. Det låter självklart, men det är vanligt att en hel dag försvinner för att någon inte har rätt version av Node, eller att miljövariabler saknas. 
+Säkerställ gärna att:
+- Repot är klonat och projektet hos var och en och startar utan fel för alla
+- Ni har börjat undersöka hur ni använder det tillhandahållna API:et (vilka endpoints som finns och vad dom gör)
+- Er utvecklingsmiljö i teamet är konsekvent – samma verktyg, samma versioner o.sv.
 
 **Definition of Done**  
-Utan en gemensam bild av vad "klar" betyder riskerar ni att merga kod som inte fungerar, eller att arbeta i olika riktning. Bestäm tidigt – gärna nu – vad som gäller för er grupp. Behöver koden vara testad? Kodgranskad? Ska den fungera på mobil? Era kriterier behöver inte vara långa, men de behöver finnas.
+Utan en gemensam bild av vad "klar" betyder finns en risk att kod mergas som inte fungerar. Eller att arbeta i olika riktning(ar). 
+Bestäm tidigt – gärna nu – vad som gäller för ert team. Behöver koden vara testad och vad menar vi med testad? Code review? Ska den fungera på mobil? Era kriterier behöver inte vara långa, men det är starkt rekommendat att åtminstone en början på dessa finns.
 
 **Vilket krav börjar ni med?**  
-Kravspecifikationen har prioriteringar som är satta av en anledning: krav med hög prioritet är ofta tekniskt grundläggande och andra krav är svåra att implementera utan dem. Ett rimligt första steg är att identifiera ett krav som:
+Kravspecen har prioriteringar som är satta av en anledning: krav med hög prioritet är ofta tekniskt grundläggande och andra krav är svåra att implementera utan dem. 
+Ett rimligt första steg, så här i början, är att identifiera ett krav som:  
 - Är relativt avgränsat
 - Ger er något konkret och körbart att visa upp
 - Inte är beroende av något ni ännu inte byggt
@@ -51,17 +56,17 @@ Tänk på att ni inte behöver börja med det mest komplexa – det viktiga är 
 
 #### Happy path
 
-När ni väl börjar implementera ett krav är det naturligt att vilja lösa allt på en gång – alla eventuella fall som kan leda till fel, alla edge cases (unika fall), alla alla konstiga scenarion man kan komma på. 
-Det är på sätt och vis en instinkt och man menar väl. Men, det kan lätt leda till att lite eller ingenting blir riktigt färdigställt.
+När ni väl börjar implementera ett krav har man ofta ambitionen att lösa allt på en gång – allt ska funka med en gång. Alla eventuella fall som kan leda till fel, alla edge cases (unika fall), alla alla konstiga scenarion man kan komma på - allt ska funka. 
+Det är på sätt och vis en instinkt och man menar väl. Men, det kan lätt leda till att lite eller ingenting blir riktigt och fullständigt färdigställt.
 
-*Happy path* är den väg genom ett system som fungerar när allt går rätt till. Ingen saknar behörighet, ingen skriver fel i ett formulär, ingen förlorar uppkopplingen mitt i en sparning. Det är det scenariot som ni bör implementera och få att fungera fullt ut innan ni tar er an det som kan gå fel.
+*Happy path* är den väg genom ett system som fungerar när allt går rätt till. Ingen saknar behörighet, ingen skriver fel i ett formulär, ingen förlorar uppkopplingen mitt i en save. Det är det scenariot som ni rekommdenderas implementera först och få att fungera fullt ut innan ni tar er an det som kan gå fel.
 
 **Varför?**
 - Det ger er något körbart och demonstrerbart tidigt
 - Det gör det lättare att resonera om krav och acceptance criteria
 - Det är lättare att lägga till felhantering i ett fungerande system än tvärtom
 
-**I praktiken** – välj ett krav och skriv en user story. Definiera happy path: vad händer när en inloggad användare gör precis det som kravspecifikationen beskriver, utan några komplikationer? Implementera det scenariot. Verifiera att det fungerar. Lägg sedan, i mån av tid, till felhantering och edge cases som egna tasks.
+**I praktiken** – välj ett krav och skriv en user story. Definiera happy path: vad händer när en inloggad användare gör precis det som kravspecifikationen beskriver, utan några komplikationer? Implementera det scenariot. Verifiera att det fungerar. Lägg sedan, i mån av tid, till felhantering och edge cases (kanske som egna tasks).
 
 Ett konkret exempel: om ni arbetar med att visa en lista över filer, är happy path att en inloggad användare med befintliga filer ser dem listade. Att hantera en tom lista, ett API-fel eller en användare utan behörighet är viktiga fall – men de är inte happy path, och de behöver inte lösas för att ni ska kunna visa att grundfunktionen fungerar.
 
@@ -95,6 +100,11 @@ Sad paths och edge cases behöver inte blockera er sprint – men de bör finnas
 efter att ni implementerat och verifierat happy path, gå igenom era acceptance criteria och fråga: vad kan gå fel här, och vad händer i gränsfallen? Varje sådant scenario är ett potentiellt sad path eller edge case. 
 Lägg in dem som egna tasks och prioritera dem utefter hur sannolika och allvarliga de är. 
 Felmeddelanden som är begripliga för användaren är nästan alltid värt att implementera tidigt – de hjälper er också att felsöka under utvecklingen.
+
+
+<div style="display: flex; justify-content: center;">
+  <Image src={australia_img} alt="17" width={300} />
+</div>
 
 ---
 
