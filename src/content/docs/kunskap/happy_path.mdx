@@ -3,6 +3,10 @@ title: Happy Path
 description: en approach för att komma igång med implementation
 ---
 
+import { Image } from 'astro:assets';
+import 17_img from '../../assets/17.jpg'
+
+
 :::danger[Under konstruktion]
 Materialet på den här sidan är inte komplett och uppdateras löpande.
 :::
@@ -66,6 +70,10 @@ Ett konkret exempel: om ni arbetar med att visa en lista över filer, är happy 
 
 
 #### Sad path – och edge cases
+
+<div style="text-align: center;">
+  <Image src={17} alt="lysa" width={100} />
+</div>
 
 Happy path förutsätter att allt fungerar. I verkligheten gör det sällan det – och det är där *sad path* kommer in.
 
