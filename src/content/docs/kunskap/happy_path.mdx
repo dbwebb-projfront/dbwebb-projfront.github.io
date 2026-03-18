@@ -1,0 +1,102 @@
+---
+title: Happy Path
+description: en approach för att komma igång med implementation
+---
+
+:::danger[Under konstruktion]
+Materialet på den här sidan är inte komplett och uppdateras löpande.
+:::
+
+
+---
+
+
+### Övning: Happy path 
+
+**Syftet** med den här övningen är att ni ska lära er att bryta ner arbete i hanterbara delar och leverera något funktionellt innan ni förfinar det – och sedan medvetet hantera det som eventuellt kan gå snett eller bli fel. 
+Det är ett arbetssätt som är hållbart, särskilt i långa projekt.
+
+---
+
+
+
+#### Innan ni börjar koda
+
+Innan gruppen sätter sig och skriver den första raden kod är det värt att stanna upp och säkerställa att ni har en gemensam grund att stå på. Det handlar inte om att planera allt i detalj – det handlar om att undvika friktion som annars dyker upp mitt i en sprint.
+
+Några saker som bör vara på plats:
+
+**Teknisk setup**  
+Alla i gruppen ska kunna köra projektet lokalt. Det låter självklart, men det är vanligt att en halvdag försvinner för att någon inte har rätt version av Node, eller att miljövariabler saknas. Säkerställ att:
+- Repot är klonat och projektet startar utan fel hos samtliga
+- Ni vet hur ni kommunicerar med det tillhandahållna API:et (hur autentisering fungerar, vilka endpoints som finns)
+- Er utvecklingsmiljö är konsekvent – samma verktyg, samma versioner
+
+**Definition of Done**  
+Utan en gemensam bild av vad "klar" betyder riskerar ni att merga kod som inte fungerar, eller att arbeta i olika riktning. Bestäm tidigt – gärna nu – vad som gäller för er grupp. Behöver koden vara testad? Kodgranskad? Ska den fungera på mobil? Era kriterier behöver inte vara långa, men de behöver finnas.
+
+**Vilket krav börjar ni med?**  
+Kravspecifikationen har prioriteringar som är satta av en anledning: krav med hög prioritet är ofta tekniskt grundläggande och andra krav är svåra att implementera utan dem. Ett rimligt första steg är att identifiera ett krav som:
+- Är relativt avgränsat
+- Ger er något konkret och körbart att visa upp
+- Inte är beroende av något ni ännu inte byggt
+
+Tänk på att ni inte behöver börja med det mest komplexa – det viktiga är att ni börjar med något som ger hela gruppen en gemensam kodbas att bygga vidare på.
+
+---
+
+#### Happy path
+
+När ni väl börjar implementera ett krav är det naturligt att vilja lösa allt på en gång – alla eventuella fall som kan leda till fel, alla edge cases (unika fall), alla alla konstiga scenarion man kan komma på. 
+Det är på sätt och vis en instinkt och man menar väl. Men, det kan lätt leda till att lite eller ingenting blir riktigt färdigställt.
+
+*Happy path* är den väg genom ett system som fungerar när allt går rätt till. Ingen saknar behörighet, ingen skriver fel i ett formulär, ingen förlorar uppkopplingen mitt i en sparning. Det är det scenariot som ni bör implementera och få att fungera fullt ut innan ni tar er an det som kan gå fel.
+
+**Varför?**
+- Det ger er något körbart och demonstrerbart tidigt
+- Det gör det lättare att resonera om krav och acceptance criteria
+- Det är lättare att lägga till felhantering i ett fungerande system än tvärtom
+
+**I praktiken** – välj ett krav och skriv en user story. Definiera happy path: vad händer när en inloggad användare gör precis det som kravspecifikationen beskriver, utan några komplikationer? Implementera det scenariot. Verifiera att det fungerar. Lägg sedan, i mån av tid, till felhantering och edge cases som egna tasks.
+
+Ett konkret exempel: om ni arbetar med att visa en lista över filer, är happy path att en inloggad användare med befintliga filer ser dem listade. Att hantera en tom lista, ett API-fel eller en användare utan behörighet är viktiga fall – men de är inte happy path, och de behöver inte lösas för att ni ska kunna visa att grundfunktionen fungerar.
+
+---
+
+
+
+#### Sad path – och edge cases
+
+Happy path förutsätter att allt fungerar. I verkligheten gör det sällan det – och det är där *sad path* kommer in.
+
+Sad path (ibland kallat *unhappy path* eller *error path*) beskriver vad som händer när något går fel eller när användaren gör något oväntat. Det handlar inte om extrema fel, utan om de situationer som är fullt realistiska i normal användning: ett tomt formulärfält, ett misslyckat API-anrop, en session som löpt ut.
+
+**Vanliga sad paths i CoEd:**
+- Användaren försöker logga in med fel lösenord
+- API:et svarar inte, eller returnerar ett fel
+- Användaren försöker öppna en fil den inte har behörighet till
+- Nätverkskopplingen tappas mitt i en redigering
+- Formulärfält lämnas tomma eller fylls i felaktigt
+
+En närliggande kategori är *edge cases* – situationer som inte nödvändigtvis är fel, men som inträffar i gränslandet av det förväntade. Vad händer om en användare har noll filer? Vad händer om två användare sparar exakt samtidigt? Vad händer om ett filnamn innehåller specialtecken? Edge cases är lätta att missa under implementation eftersom de sällan dyker upp i det normala testflödet – men de är ofta precis de situationer som verkliga användare råkar ut för.
+
+Sad paths och edge cases behöver inte blockera er sprint – men de bör finnas med som tasks, och de bör implementeras *efter* att happy path fungerar. Ett system som hanterar det lyckliga scenariot men kraschar vid det minsta oväntade är inte leveransklart.
+
+**I praktiken** 
+
+efter att ni implementerat och verifierat happy path, gå igenom era acceptance criteria och fråga: vad kan gå fel här, och vad händer i gränsfallen? Varje sådant scenario är ett potentiellt sad path eller edge case. 
+Lägg in dem som egna tasks och prioritera dem utefter hur sannolika och allvarliga de är. 
+Felmeddelanden som är begripliga för användaren är nästan alltid värt att implementera tidigt – de hjälper er också att felsöka under utvecklingen.
+
+---
+
+
+#### Läsanvisningar
+
+**Artiklar**  
+- [Atlassian: User stories with examples and a template](https://www.atlassian.com/agile/project-management/user-stories) – bra genomgång av hur user stories skrivs och kopplas till acceptance criteria, inklusive resonemang kring happy och edge cases.
+- [softengbook.org – kapitel 3: Requirements](https://softengbook.org/chapters/requirements) – kursens textbok, täcker user stories, kravnedbrytning och MVP.
+
+**Videoklipp**
+- **Henrik Kniberg – Agile Product Ownership in a Nutshell** *(15 min)* – pedagogisk genomgång av hur man prioriterar och arbetar med en backlog från krav till leverans.  
+  [youtube.com/watch?v=502ILHjX9EE](https://www.youtube.com/watch?v=502ILHjX9EE)
