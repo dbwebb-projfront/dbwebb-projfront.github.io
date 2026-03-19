@@ -11,11 +11,18 @@ export default defineConfig({
 			sidebar: [
 				{ label: 'Kursöversikt', link: '/' },
 				{
-					label: "Sprints",
+					label: 'Om kursen',
 					items: [
+						'kunskap/information_om_kursen',
 						'kunskap/scrum',
 						'kunskap/arbeta_i_sprintar',
 						'kunskap/user_stories_tasks',
+						'kunskap/flow_pr_cr',
+					]
+				},
+				{
+					label: "Sprints",
+					items: [
 						'kravspec',
 						'sprint0',
 						'sprint1',
