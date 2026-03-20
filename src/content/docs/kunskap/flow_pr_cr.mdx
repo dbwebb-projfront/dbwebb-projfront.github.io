@@ -116,7 +116,7 @@ Vid varje sprints slut skapar ni en branch `submission-sprint-X` från `main` oc
 
 Det interna arbetsflödet och inlämningsflödet är alltså samma mekanik – ni lär er verktyget på riktigt, inte i ett konstruerat skolmoment.
 
-
+---
 
 ## Code Review
 
@@ -132,6 +132,7 @@ En code review handlar inte om att hitta fel för felets skull. Det handlar om a
 - **Ge konstruktiv feedback** – vad kan förbättras, och varför?
 - **Dela kunskap** – lyft det som är bra, inte bara det som behöver justeras
 
+
 ### Hur du ger feedback
 
 Skriv kommentarer direkt i PR:et på GitHub, på relevant rad eller som en övergripande kommentar.  
@@ -143,13 +144,13 @@ Några riktlinjer:
 - Ange tydligt om en kommentar är ett krav ("detta måste ändras innan merge") eller en tanke ("detta kan vara värt att diskutera")
 - Godkänn PR:en med ett tydligt "Approved" eller "LGTM" (Looks Good To Me) när den är redo
 
+
 ### Vem granskar?
 
 Minst en annan gruppmedlem bör/ska granska och godkänna ett PR innan det mergas.  
 Det är den som öppnar/skapar PR:et som ansvarar för att granskning faktiskt sker – det händer inte per automatik.
 
 Prova gärna att rotera vem som granskar, så att alla i gruppen får erfarenhet av att granska olika delar av kodbasen.
-
 
 
 ### Vad händer om granskaren hittar problem?
@@ -159,7 +160,7 @@ Den som öppnat PR:et gör de nödvändiga ändringarna och ber om en ny granskn
 
 Det är inte ett misslyckande – det är arbetsflödet som fungerar som det ska.
 
-
+---
 
 ## Definition of Done i code review
 
@@ -186,22 +187,44 @@ När ett PR öppnas går granskaren igenom checklistan.
 Om en punkt inte är uppfylld returneras PR:en – inte för att vara petig, utan för att teamet kommit överens om vad "klar" innebär. Det är precis så det fungerar i professionella team.
 
 
-
-### DoD reducerar friktion
-
-Utan en gemensam DoD uppstår lätt situationer där den som skrivit koden anser sig vara klar, medan granskaren har en annan uppfattning. Det kan skapa onödiga konflikter och förseningar.
-
-Med en etablerad DoD är friktionen lägre: ni diskuterar om checklistan är uppfylld, inte om vad som egentligen menas med "klar".
-
-
-
 ### Revidera DoD vid behov
 
 Er DoD är inte huggen i sten. Om ni märker att den saknar viktiga punkter, eller innehåller saker som inte längre är relevanta, är retrospective ett bra tillfälle att revidera den.
 
+Utan en gemensam DoD kan det bli rörigt. Har man otur så kan det blir så att den som skrivit koden anser sig vara klar medan granskaren har en helt annan uppfattning. Risk för missförstånd och förseningar.
+
+Med en gemensam DoD blir hela processen enklare: ni kan då diskutera om checklistan är uppfylld, inte om vad som egentligen menas med "klar".
+
 Dokumentera alltid er aktuella DoD – och se till att alla i gruppen känner till vad som gäller.
 
+---
 
+## Branch rulesets
+
+Detta är ett tips som ni i gruppen kan undersöka om det är relevant för er – i repot kan man göra inställningar som tekniskt sett _tvingar_ fram ett arbetssätt ni kommit överens om.
+
+Inställningarna finns i repot under **Settings/Rules/Rulesets**. Man kan styra vad som är tillåtet mot en branch. I samma vy finns också *Add classic ruleset*, vilket är den äldre varianten (branch protecting rules) som fortfarande fungerar men successivt ersätts.
+
+Den viktigaste regeln att ställa in är i så fall **Require a pull request before merging**, som gör det omöjligt att pusha direkt till `main` utan att gå via ett PR. Om man kombinerar det med **Required approvals: 1** måste minst en annan gruppmedlem ha godkänt PR:et innan merge kan göras – annars nekas mergen om regeln inte är uppfylld. Detta blir alltså ett sätt att göra code review till ett krav.
+
+Det finns också något som heter **Dismiss stale pull request approvals when new commits are pushed**, vilket innebär att ett godkännande ogiltigförklaras om ny kod pushas till branchen efter att granskningen gjordes – och PR:et måste godkännas på nytt. Ett strängare krav. Testa först `Require a pull request before merging`.
+
+Här kan man läsa mer om detta: [docs.github.com – About rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets)
+
+---
+
+## Till sist - branch-strategi och PR-storlek
+GitHub Flow som arbetar med är en enkel och effektiv branch-strategi: en stabil main och kortlivade feature-branches. Det är medvetet enkelt – komplexare flöden som Git Flow med develop-branch, release-branches och hotfix-branches blir onödigt komplexa, särskilt eftersom det är mer lämpat i större projekt med fler parallella releaser.
+
+Det som däremot påverkar kvaliteten på era code reviews mer än nästan något annat är storleken på era PR. Det är bättre att skapa PR som är för små än för stora. En granskare som ser ett väldigt omfattande PR kommer ha svårt att ge meningsfull feedback och risken för att potentiall problem missas ökar.
+
+Några praktiska tumregler för era PR skulle kunna vara:
+
+- Ett PR ska lösa en sak – en user story, en avgränsad fix, ett sammanhängande refactoring-steg
+- Undvik att blanda funktionsförändringar med stiländringar i samma PR
+- Om du märker att ditt PR växer sig stort, kan det vara en god idé att dela upp det
+
+---
 
 ## Sammanfattning
 
@@ -232,6 +255,9 @@ Dokumentera alltid er aktuella DoD – och se till att alla i gruppen känner ti
   Praktisk och välskriven guide om hur man ger och tar emot code reviews konstruktivt. Rekommenderas.
 - [Google Engineering Practices – Code Review](https://google.github.io/eng-practices/review/)  
   Googles öppet publicerade interna riktlinjer för code review. Bra referens för den som vill förstå hur det fungerar i professionella team.
+- [GitHub Skills – Review Pull Requests](https://github.com/skills/review-pull-requests) interaktiva övningar från GitHub för processen att begära review, ge feedback och godkänna förändringar i ett riktigt repo.
+- [Awesome Code Review](https://github.com/joho/awesome-code-review) ett annat repo med artiklar, böcker, papers och videoklipp om code reviews.
+- ["Looks Good to Me"](https://www.manning.com/books/looks-good-to-me) bok av Adrienne Braganza (Manning, 2024) om konstruktiv feedback och hela processen hur man bygger en kultur där granskning som något positivt.
 :::
 
 
