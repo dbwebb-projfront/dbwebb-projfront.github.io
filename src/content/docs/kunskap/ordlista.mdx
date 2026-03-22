@@ -1,0 +1,358 @@
+---
+title: Ordlista
+description: Korta förklaringar av begrepp, termer och koncept som förekommer i kursen eller i relaterad litteratur.
+---
+
+Korta förklaringar av vanliga termer och begrepp som kan förekomma i kursen eller på något sätt har kopplingar. Listan är inte på något sätt tänkt att vara fullständig, men däremot att vara ett eventuellt stöd.
+
+## A
+
+**Acceptance criteria**
+Konkreta, mätbara villkor som måste vara uppfyllda för att en user story ska anses klar. Formuleras vanligtvis som "givet … när … så …" (Gherkin-format) eller som en enkel checklista.
+
+**Agile / Agilt**
+Samlingsnamn för iterativa och inkrementella arbetssätt inom mjukvaruutveckling. Grundprinciperna finns i *Agile Manifesto* (2001). Scrum är ett exempel på ett agilt ramverk.
+
+**Agile Manifesto**
+Ett manifest från 2001 med fyra värderingar och tolv principer som lade grunden för moderna agila arbetssätt. Betonar individer och interaktioner, fungerande programvara, kundsamarbete och att reagera på förändring.
+
+**Artefakt (Scrum)**
+I Scrum-terminologi: ett av de tre officiella dokumenten — Product Backlog, Sprint Backlog och Increment. Ska inte blandas ihop med begreppet i vardagligt språk.
+
+---
+
+## B
+
+**Backlog**
+Se *Product Backlog* och *Sprint Backlog*.
+
+**Backlog grooming / refinement**
+Arbete med att bearbeta och förtydliga items i Product Backlog — bryta ner stora stories, uppskatta storlek, prioritera om. Sker löpande, inte bara vid sprintstart.
+
+**BDD (Behavior-Driven Development)**
+Utvecklingsmetodik där beteende beskrivs i naturligt språk (ofta Gherkin-format: *Given/When/Then*) innan kod skrivs. Syftar till att förbättra kommunikationen mellan tekniker och icke-tekniker.
+
+**Branch**
+En parallell kodbas i Git. Används för att isolera arbete (t.ex. en feature eller buggfix) från `main`-grenen tills det är redo att mergas.
+
+**Burndown chart**
+Diagram som visar återstående arbete (t.ex. estimerade timmar) över tid under en sprint. En nedåtgående kurva indikerar att teamet är på rätt spår.
+
+**Burnup chart**
+Liknar burndown men visar i stället hur mycket arbete som *slutförts* i förhållande till totalt omfång. Synliggör också om scope förändras.
+
+---
+
+## C
+
+**CI/CD**
+*Continuous Integration / Continuous Delivery (eller Deployment)*. Automatiserade processer för att bygga, testa och driftsätta kod vid varje push eller merge.
+
+**CoEd**
+Kursens projekt — en realtidsbaserad kollaborativ kodredigerare, CollaborationEditor. 
+
+**Code review**
+Granskning av en annan persons kod innan den mergas. Syftet är att hitta fel, förbättra kvalitet och sprida kunskap inom teamet. I kursen sker det internt i gruppen via Pull Requests på GitHub.
+
+**Commit**
+En sparad ögonblicksbild/snapshot av ändringar i Git. Varje commit har ett unikt ID (hash) och ett meddelande som beskriver vad som ändrades.
+
+**Crystal**
+En familj av agila metoder (Crystal Clear, Crystal Yellow, Crystal Orange…) skapad av Alistair Cockburn. Metodens tyngd anpassas efter teamstorlek och projektkritikalitet — ju större och mer kritiskt, desto mer process.
+
+**Cycle time**
+Tid från att arbetet på ett item *påbörjas* till att det är klart. Skiljer sig från *lead time* som räknas från att itemet skapas. Ett mått i Kanban.
+
+---
+
+## D
+
+**Daily Scrum / Daily standup**
+Ett kort dagligt möte (max 15 min) där teamet synkar: vad gjordes igår, vad planeras idag, finns det hinder? Syftet är koordination, inte statusrapport till chef.
+
+**Definition of Done (DoD)**
+En gemensam, bindande lista med kriterier som *alla* items måste uppfylla för att räknas som klara. I kursen är DoD ett obligatoriskt krav kopplat till PR- och code review-flödet.
+
+**Deployment**
+Att driftsätta en applikation — göra den tillgänglig i en miljö (t.ex. produktion eller staging). Se även *CI/CD*.
+
+**DevOps**
+En 'kultur' och uppsättning koncept och praktiker som suddar ut gränsen mellan utveckling (Dev) och drift/operations (Ops). Betonar automatisering, korta feedbackloopar och gemensamt ansvar för hela leveranskedjan.
+
+**DSDM (Dynamic Systems Development Method)**
+Ett agilt ramverk med tydlig projektstyrningsstruktur. Känt för principen att tid, kostnad och kvalitet är fasta — det är scope som är flexibelt. MoSCoW-prioritering används ofta ihop med DSDM.
+
+---
+
+## E
+
+**Empirisk processkontroll**
+Grunden i Scrum: beslut fattas utifrån observation och erfarenhet (inspektion, anpassning, transparens) snarare än förutsägbar planering. Kontrast mot deterministiska metoder som vattenfall.
+
+**Estimat**
+En uppskattning av hur lång tid ett arbetsmoment tar. Estimat är alltid osäkra; skillnaden mellan estimat och faktisk tid är en viktig lärpunkt i kursen.
+
+**Extreme Programming (XP)**
+Ett agilt ramverk med fokus på teknisk excellens. Praktiker inkluderar parprogrammering, TDD, kontinuerlig integration, enkelt design och täta releaser. Skapades av Kent Beck på 1990-talet.
+
+**Epic**
+En stor, övergripande user story som behöver brytas ner i mindre stories innan den kan implementeras. Används för att gruppera relaterat arbete.
+
+---
+
+## F
+
+**Feature branch**
+En branch skapad för att utveckla en specifik funktion, enligt GitHub Flow-modellen. Mergas tillbaka till `main` via en Pull Request när funktionen är klar och granskad.
+
+**Feature-Driven Development (FDD)**
+En iterativ metod som organiserar arbetet kring features snarare än sprintar. Passar större team och betonar domänmodellering tidigt i projektet.
+
+**Flow**
+I Lean/Kanban: hur smidigt arbete rör sig genom ett system utan väntetider eller flaskhalsar. Mäts bl.a. med *lead time* och *cycle time*.
+
+**Fork**
+En personlig kopia av ett annat GitHub-repo. I kursen forkar ni ett lärarskapat repo inom kursorganisationen och arbetar i er fork.
+
+---
+
+## G
+
+**Git**
+Distribuerat versionshanteringssystem. Spårar ändringar i källkod och möjliggör samarbete utan att skriva över varandras arbete.
+
+**GitHub Flow**
+Ett enkelt Git-arbetsflöde: arbeta på feature branches, öppna en Pull Request, granska, merga till `main`. I kursen ska detta flöde följas.
+
+**Git Flow**
+Ett mer komplext Git-arbetsflöde med separata `develop`-, `release`- och `hotfix`-grenar. Passar längre releasecykler men är ofta onödigt tungt för mindre projekt — kursen använder det enklare *GitHub Flow* i stället.
+
+---
+
+## I
+
+**Increment**
+Det faktiska, fungerande resultatet av en sprint — kod som är testad, granskad och uppfyller DoD. I Scrum är varje Increment ett potentiellt leveransbart tillstånd av produkten.
+
+**Inkrementell utveckling**
+Att leverera programvara i delar (inkrement) som var och en tillför värde. Kombineras ofta med iterativ utveckling i agila metoder.
+
+**Issue**
+En uppgift, bugg eller förbättring i ett ärendehanteringssystem (t.ex. GitHub Issues). Kan, om man vill, kopplas till user stories i backlogen.
+
+**Iterativ utveckling**
+Att bygga programvara i upprepade cykler (iterationer) där varje cykel förfinar och utökar produkten. Kontrast mot vattenfallsmodellen där allt planeras och byggs sekventiellt.
+
+---
+
+## K
+
+**Kanban**
+Ett agilt ramverk baserat på visualisering av arbetsflödet med ett board (To Do -> In Progress -> Done). Begränsar pågående arbete (WIP) för att öka flödet. Till skillnad från Scrum har Kanban inga fasta iterationer eller roller.
+
+**Kanban board**
+En tavla (fysisk eller digital) som visualiserar arbetsflödet med kolumner för olika tillstånd. Ger en omedelbar bild av vad som pågår och var flaskhalsar finns. Enkla sådana använder ofta swimlanes för To Do, In Progress och Done.
+
+**Kravspecifikation**
+Det dokument som beskriver vad systemet ska göra. I kursen ges ni en kravspecifikation för CoEd; ni ansvarar för att tolka kraven och formulera user stories utifrån den som sedan ska implementeras.
+
+---
+
+## L
+
+**Lead time**
+Tid från att ett arbetsitem skapas (t.ex. en user story) till att det är levererat. Används i Kanban för att mäta genomströmningshastighet. Se även *Cycle time*.
+
+**Lean Software Development**
+En tillämpning av Lean-principerna (ursprungligen från Toyota Production System) på mjukvaruutveckling. Sju principer: eliminera slöseri, inbyggd kvalitet, skapa kunskap, skjuta upp beslut, leverera snabbt, respektera människor, optimera helheten.
+
+**LeSS (Large-Scale Scrum)**
+Ett ramverk för att skala Scrum till flera team med minimalt tillagd process. Poängterar att Scrum inte ska modifieras — skalningen sker runt ramverket, inte inuti det.
+
+---
+
+## M
+
+**Merge**
+Att sammanfoga en branch med en annan i Git. Sker typiskt via en Pull Request efter godkänd code review.
+
+**Merge conflict**
+Uppstår när Git inte automatiskt kan slå ihop ändringar från två branches, t.ex. för att båda har ändrat samma rad. Måste lösas manuellt.
+
+**Monaco Editor**
+Det textredigeringsbibliotek som används i CoEd. Samma editor som ligger bakom Visual Studio Code. Exponerar ett JavaScript-API för att hantera innehåll, teman och language support.
+
+**MoSCoW**
+Prioriteringsmetod: *Must have*, *Should have*, *Could have*, *Won't have (this time)*. Används för att avgöra vad som ingår i ett leveransomfång. Vanligt i DSDM och i kravarbete generellt.
+
+**MVP (Minimum Viable Product)**
+Den minsta produktversion som uppfyller kärnkraven och kan levereras till användare. I kursen är MVP ett krav för godkäntprojekt.
+
+---
+
+## N
+
+**Nexus**
+Ett skalningsramverk för Scrum utvecklat av Scrum.org. Koordinerar 3–9 Scrum-team som arbetar mot en gemensam Product Backlog via ett Nexus Integration Team.
+
+---
+
+## O
+
+**OKR (Objectives and Key Results)**
+Ett 'målsättningsramverk': ett mål (*Objective*) kombineras med 2–5 mätbara nyckelresultat (*Key Results*). Används ofta på organisations- eller teamnivå för att koppla dagligt arbete till strategiska mål.
+
+---
+
+## P
+
+**Pair programming**
+XP-praktik där två utvecklare arbetar vid samma dator: en skriver kod (*driver*), den andra granskar och tänker framåt (*navigator*). Förbättrar kvalitet och kunskapsspridning.
+
+**Planning Poker**
+En teknik för estimering i grupp. Varje teammedlem väljer ett kort med ett värde (story points) utan att se andras val — sedan avslöjas alla kort samtidigt för att undvika ankareffekten.
+
+**PR**
+Se *Pull Request*.
+
+**Product Backlog**
+En prioriterad lista över allt önskat arbete för produkten. Ägs av Product Owner. Items längst upp är mest prioriterade och mest genomarbetade.
+
+**Product Owner (PO)**
+I Scrum: den roll som ansvarar för Product Backlog och prioritering — representerar intressenters och slutanvändares behov. I kursen simuleras denna roll av kursledningen via kravspecifikationen.
+
+**Progressive Web App (PWA)**
+En webbapplikation som använder moderna webb-API:er (t.ex. Service Workers, Web App Manifest) för att ge en upplevelse liknande en native-app, inklusive offlinestöd och installation.
+
+**Pull Request (PR)**
+En förfrågan om att merga en branch till en annan på GitHub. Används för code review och diskussion innan kod tas in i `main`. I kursen görs sprintinlämningar som PR mot `main`.
+
+---
+
+## R
+
+**React**
+JavaScript-bibliotek för att bygga komponentbaserade användargränssnitt. Rekommenderat ramverk i kursen.
+
+**Refinement**
+Se *Backlog grooming / refinement*.
+
+**Remaining hours**
+Återstående uppskattad tid för ett arbetsmoment. Uppdateras löpande under sprinten och används för burndown-diagram. Se även *Estimat*.
+
+**Retrospective / Retrospektiv**
+Sprintceremonin där teamet reflekterar över *processen* — vad fungerade bra, vad bör förbättras — snarare än produkten.
+
+**Review**
+Se *Sprint Review*.
+
+**RUP (Rational Unified Process)**
+Ett iterativt mjukvaruutvecklingsramverk från IBM/Rational. Organiserar arbetet i fyra faser (Inception, Elaboration, Construction, Transition) och betonar arkitektur och dokumentation mer än agila metoder. Ses ofta som tungt och formellt jämfört med Scrum.
+
+---
+
+## S
+
+**SAFe (Scaled Agile Framework)**
+Ett ramverk för att skala agila metoder till stora organisationer med många team. Lägger till nivåer (team, program, portfolio) ovanpå Scrum/Kanban. Kritiserat av vissa för att vara tungt och byråkratiskt.
+
+**Scrum**
+Ett agilt ramverk för produktutveckling i iterationer kallade sprintar. Definierar roller (Product Owner, Scrum Master, Development Team), artefakter (backlogs, Increment) och ceremonier (Planning, Daily, Review, Retrospective).
+
+**Scrum Master**
+Rollen i Scrum som ansvarar för att teamet följer och förstår Scrum-processen, och som röjer hinder för teamet. Inte en projektledare i traditionell mening.
+
+**Scrum of Scrums**
+En teknik för att koordinera flera Scrum-team. Representanter från varje team möts regelbundet för att synka beroenden och hinder mellan teamen.
+
+**Scrumban**
+En hybrid mellan Scrum och Kanban. Behåller Scrums sprintar och ceremonier men lägger till Kanbans WIP-gränser och flödesfokus. Vanligt i team som vill ha mer flexibilitet än ren Scrum.
+
+**Shape Up**
+En produktutvecklingsmetod från Basecamp. Arbetar i sexveckorscykler med en inbyggd tvåveckorspaus (*cooldown*). Betonar att ge team problemet att lösa — inte en specifikation att följa — och används som ett alternativ till backlog-driven Scrum.
+
+**Spike**
+En tidsbegränsad undersökning eller proof-of-concept för att minska osäkerhet inför en user story. Resultatet är kunskap, inte produktionsklar kod.
+
+**Sprint**
+En tidsbegränsad iteration (vanligen 1–4 veckor) i Scrum. I kursen är sprintar en vecka långa. Varje sprint resulterar i ett Increment.
+
+**Sprint Backlog**
+Den delmängd av Product Backlog som teamet förbinder sig att leverera under en sprint, plus en plan för hur det ska göras.
+
+**Sprint Planning**
+Ceremonin i början av varje sprint där teamet väljer items från Product Backlog och planerar arbetet för sprinten.
+
+**Sprint Review**
+Ceremonin i slutet av varje sprint där teamet presenterar det färdiga Incrementet och samlar feedback. Fokus på *produkten*.
+
+**Stakeholder / Intressent**
+En person eller grupp som påverkas av eller har intresse i projektet — t.ex. slutanvändare, beställare, lärare. Skilj från Product Owner som aktivt styr backlogen.
+
+**Story points**
+En relativ enhet för att uppskatta storleken/komplexiteten på en user story, utan att binda sig till faktiska timmar. Vanliga skalor: Fibonacci (1, 2, 3, 5, 8…) eller T-shirt-storlekar.
+
+**Submission branch**
+I kursen en branch för inlämning i slutet av en sprint: `submission-sprint-X`. PR görs mot `main` för att markera att sprinten är inlämnad.
+
+---
+
+## T
+
+**Task**
+En konkret arbetsuppgift som bryts ut från en user story under Sprint Planning. Till skillnad från user stories är tasks tekniska och interna för teamet.
+
+**TDD (Test-Driven Development)**
+Utvecklingsmetodik där tester skrivs *innan* produktionskoden. Cykeln är: skriv ett failande test → skriv minimal kod som får testet att passera → refaktorera. Centralt i XP.
+
+**Timeboxing**
+Att begränsa en aktivitet till en fast tidsram. Sprintar är ett exempel. Tvingar prioritering och förhindrar perfektionism.
+
+**Time tracking / Tidsloggning**
+Att registrera nedlagd tid per arbetsmoment. I kursen loggas estimat, spenderad tid och återstående tid i en CSV-fil per sprint.
+
+**Trunk-based development**
+Ett Git-arbetsflöde där alla utvecklare arbetar och 'pushar' mot en gemensam `main`-branch (trunk) flera gånger per dag med korta eller inga feature branches. Kräver stark CI och ofta feature flags. Kontrast mot Git Flow.
+
+---
+
+## U
+
+**User story**
+En kortfattad beskrivning av funktionalitet ur slutanvändarens perspektiv: *"Som [roll] vill jag [mål] för att [nytta]."* Utgångspunkt för planering och estimering.
+
+**User story mapping**
+En teknik för att visualisera ett systems funktionalitet som ett tvådimensionellt board: aktiviteter längs den horisontella axeln, detaljnivå längs den vertikala. Hjälper till att identifiera MVP och prioritera releaser.
+
+---
+
+## V
+
+**Vattenfall (Waterfall)**
+En sekventiell utvecklingsmodell: krav → design → implementation → test → driftsättning. Varje fas avslutas innan nästa börjar. Ger lite utrymme för förändrade krav och används ofta som kontrast när agila metoder motiveras.
+
+**Velocity**
+Hur mycket arbete (t.ex. story points eller timmar) ett team i genomsnitt slutför per sprint. Används för att förutsäga kapacitet i kommande sprintar.
+
+**Versionshantering**
+System för att spåra och hantera ändringar i filer över tid. I kursen används Git.
+
+---
+
+## W
+
+**WebSocket**
+Ett protokoll för tvåvägskommunikation i realtid mellan klient och server över en persistent anslutning. Används i CoEd för att bland annat synkronisera ändringar.
+
+**WIP (Work in Progress)**
+Arbete som påbörjats men inte avslutats. Högt WIP minskar flödet och ökar risken för halvfärdiga features. Kanban begränsar WIP explicit.
+
+--
+
+## X
+
+**XP**
+Se *Extreme Programming (XP)*.
+
+
+_Om du tycker något saknas och bör läggas till, kontakta gärna kursledningen._

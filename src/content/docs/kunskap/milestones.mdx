@@ -1,0 +1,115 @@
+---
+title: Milstolpar och Gantt-schema
+description: Vad är milstolpar, hur relaterar de till sprintbaserat arbete, och när är ett Gantt-schema användbart?
+---
+
+
+**Innehållet här är inte kopplat till krav eller något ni måste göra i kursen.**
+
+Se innehållet som tips eller hjälp som eventuellt skulle kunna vara användbart för er.
+
+Milstolpar och Gantt-schema är begrepp från traditionell projektplanering som dyker upp ofta. Här ges en kortfattad ingång till vad det är och som exempel hur de skulle kunna användas i förhållande till kursens sprintar.
+
+## Vad är en milstolpe?
+
+En **milstolpe** (*milestone*) är en händelse eller ett mål i ett projekt — inte ett arbetsmoment utan ett *resultat* som markerar att något viktigt är uppnått. Milstolpar har alltså inget varaktighet, ingen timebox; de är punkter i tid.
+
+Exempel kopplat till kursen:
+
+- "Scenario i MVP är uppnådd"
+- "Alla krav är implementerade med hög prio"
+- "Code Review av sprint 2genomförd"
+- "Inlämning och release genomförd"
+
+I traditionella projekt används milstolpar för att dela upp ett långt arbete i några slags 'kontrollpunkter' — både för teamet självt och för externa intressenter (stakeholders) som vill veta eller informeras om när något levereras.
+
+## Vad är ett Gantt-schema?
+
+Ett **Gantt-schema** är ett diagram som visualiserar ett projekts aktiviteter längs en tidslinje. Varje aktivitet visas som ett horisontellt fält; milstolpar markeras ofta som diamanter eller lodräta linjer.
+
+Gantt passar i projekt där:
+
+- Aktiviteterna är kända i förväg
+- Det finns tydliga beroenden mellan uppgifter
+- Tidsplanen är fastlagd
+
+Det passar **sämre** för iterativt, agilt arbete — där backloggen förändras, prioriteringar justeras och teamet lär sig längs vägen. Att låsa ett Gantt-schema i vecka ett och sedan följa det slaviskt motverkar just den adaptivitet som Scrum syftar till.
+
+:::tip
+Milstolpar kan användas för att markera viktiga leveranser/releaser. Ett helt projekt ska inte planeras i ett Gantt-schema - däremot kan det vara en poäng att initialt till exempel placera när vad bör vara klart utifrån beroenden.
+:::
+
+## Vad motsvarar milstolpar i kursen?
+
+Kursen har inga formella milstolpar, men på sätt och viss kan varje sprint ses som en. Som grupp skulle man kunna tänka sig att sätta ett antal milstolpar utefter sprintarna.  
+
+Ett exempel:
+
+| Milstolpe | När |
+|---|---|
+| Förberedelser och val klart | Slutet av Sprint 0 |
+| Första fungerande prototyp | Sprint 2 |
+| MVP uppnådd | Sprint 3 |
+| Relase CoEd | Sprint 4 |
+| Slutpresentation och demo | Sprint 99 |
+
+Dessa punkter är inte inlämningar i sig, men skulle kunna vara bra att ha som interna 'kontrollpunkter' för gruppen.
+
+Ytterligare ett exempel:
+
+```mermaid
+timeline
+    title milestones
+    Sprint 0  : preparations
+    Sprint 1  : dev
+    Sprint 2  : first prototype
+    Sprint 3  : dev
+    Sprint 4  : MVP reached
+    Sprint 99 : fixes, release
+```
+
+
+GitHub Projects har inbyggt stöd för milstolpar (*Milestones*) — direkt i repot.
+Exempelvis kan issues och pull requests kopplas till en milstolpe.
+
+Hur man gör lämnas till den nyfikna.
+
+---
+
+## Gantt-schema
+
+Gantt-schemat ger en annan vy över samma information — här syns aktiviteterna som fält längs en tidslinje.  
+Scheman kan göras i princip i vilket verktyg som helst - till exempel Google Sheets eller Excel.
+
+Gantt:
+
+```mermaid
+gantt
+    title CoEd
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d %b
+
+    section Sprintar
+    Sprint 0 — Setup               :s0, 2026-03-30, 7d
+    Sprint 1                       :s1, after s0, 14d
+    Sprint 2                       :s2, after s1, 14d
+    Sprint 3                       :s3, after s2, 14d
+    Sprint 4                       :s4, after s3, 14d
+    Sprint 99             :s99, after s9, 7d
+
+    section Milstolpar
+    Backlog och arkitektur klar    :milestone, after s0, 0d
+    Första fungerande prototyp     :milestone, after s2, 0d
+    MVP uppnådd                    :milestone, after s6, 0d
+    Kodgranskning genomförd        :milestone, after s9, 0d
+    Slutpresentation               :milestone, after s99, 0d
+```
+
+---
+
+## Sammanfattning
+
+- Milstolpar markerar viktiga punkter i projektet, inte arbetsmoment.
+- Gantt-schema passar bättre för sekventiell planering än för iterativt arbete — använd det som orienteringskarta, inte som styrande plan.
+- Kursens naturliga milstolpar är Sprint 0-avslut, första prototyp, MVP, kodgranskning och slutpresentation (Sprint 99).
+- GitHub Projects har inbyggt stöd för milstolpar och kopplar dem direkt till issues och pull requests.

@@ -1,10 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
+		mermaid({ autoTheme: true }), //mermaid, @mattische likes this
 		starlight({
 			title: 'PROJFRONT',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/dbwebb-projfront/dbwebb-projfront.github.io' }],
@@ -21,6 +23,13 @@ export default defineConfig({
 					]
 				},
 				{
+					label: 'Övrigt',
+					items: [
+						'kunskap/milestones',
+						'kunskap/ordlista',
+					]
+				},
+				{
 					label: "Sprints",
 					items: [
 						'kravspec',
@@ -32,6 +41,7 @@ export default defineConfig({
 						'sprint99',
 					]
 				},
+
 			],
 			customCss: [
 				// Relative path to your custom CSS file
