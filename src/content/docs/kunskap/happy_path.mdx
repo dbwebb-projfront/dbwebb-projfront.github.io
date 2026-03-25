@@ -12,17 +12,99 @@ import australia_img from '../../../assets/australia.jpg'
 Materialet på den här sidan är inte komplett och uppdateras löpande.
 :::
 
+---
+
+## Övning: Happy path
+
+**Syftet** med den här övningen är;  
+- att ni som grupp ska komma igång med arbetet i denna första längre sprint.
+- att ni som grupp ska bli medvetna om och lära er att bryta ner arbete i hanterbara delar och leverera något funktionellt _innan_ ni förfinar det – och sedan medvetet hantera det som eventuellt kan gå snett eller bli fel. Det är ett arbetssätt som är hållbart, särskilt i långa projekt.
 
 ---
 
+### Från krav till user story
 
-## Övning: Happy path 
+Kravspecifikationen beskriver *vad* systemet ska göra – inte hur ni ska organisera arbetet.
+Det är ert jobb att bryta ned kraven i hanterbara delar innan ni börjar koda. Men hur kommer man igång då?  
+Lättare sagt än gjort kanske. Här nedan kommer lite tips med hur ni kan komma igång i gruppen.
 
-**Syftet** med den här övningen är att ni ska blir medvetna om och lära er att bryta ner arbete i hanterbara delar och leverera något funktionellt _innan_ ni förfinar det – och sedan medvetet hantera det som eventuellt kan gå snett eller bli fel. 
-Det är ett arbetssätt som är hållbart, särskilt i långa projekt.
+En rimlig väg kan se ut så här:
+
+**1. Välj ett krav**
+Om ni har svårt att hitta en ingång så är en rekommendation att börja med att se över de krav med hög prioritet. Försök identifiera ett krav som är avgränsat och inte beror på något ni ännu inte byggt. Gör detta tillsammans i gruppen så att ett resonemang leder fram till ett rimligt val. Målet är alltså att hitta ett krav med hög prio och som inte beror på andra krav eller att en kodbas redan finns.
+
+Exempelvis, om det finns ett krav med hög prioritet som säger att _användare ska kunna registrera och autentitisera sig_ — skulle det kunna var ett bra krav att starta med. Det är högt prioriterat, tekniskt oberoende, kräver ingen tidigare data på plats (registrering) och utgör en förutsättning för i stort sett allt annat i systemet. Alltås, inom ett sådant krav är registrering det rimliga första steget: utan ett konto finns inget att logga in med.
+
+Undersök nu API:t för att se vilka routes och endpoints som är relevanta, och hur ni kan lösa det i React (om ni valt ramverket).
+
+**2. Formulera en user story**
+En user story sätter kravet i ett användarperspektiv. Utifrån ovan valda krav skulle en story kunna formuleras så här:
+
+*"Som ny användare vill jag kunna skapa ett konto med e-post och lösenord, så att jag kan logga in och komma åt mina filer."*
+
+Den skulle också kunna bli tre user stories;
+
+- *"Som ny användare vill jag kunna skapa ett konto."*. 
+- *"Som användare vill jag kunna logga in."*
+- *"Som inloggad användare ska jag kunna komma åt mina filer"*
+
+Kanske skulle det kunna bli ännu fler.  
+Angående mängden så finns inget _rätt svar_ - dock bör man undvika att de tasks som kopplas till respektive user story inte krockar eller påverkar varandra för mycket - det är inte bra om flera personer implementerar samma funktionalitet samtidigt. Fler user stories kan vara lockande men kan potentiellt ge upphov till problem om man inte planerar noggrant. Å andra sidan kan för stora stories genera för många eller för stora enskilda tasks. En mellanväg är oftast bäst. Det viktigt för ert arbete är att testa er fram och hitta er väg. 
+
+Låt oss välja mellanvägen - vi konstruerar två stycken user stories.  
+
+1. **Registrering** - _"Som ny användare vill jag kunna skapa ett konto med e-post och lösenord, så att jag kan börja använda applikationen."_
+2. **Inloggning och utloggning** - _"Som registrerad användare vill jag kunna logga in och ut, så att jag kan komma åt och skydda mina filer."_
+
+
+
+**3. Definiera acceptance criteria**
+Vi går vidare med Acceptance criteria som ska ge svar på frågan: *vad måste vara sant för att storyn ska anses klar?*. 
+För **Registrering** är gruppen överens och kommer fram till följande;  
+- Registreringsformuläret visas för icke-autentiserade användare
+- En ny användare kan skapa ett konto med giltig e-post och lösenord
+- Felaktiga eller ofullständiga uppgifter ger ett begripligt felmeddelande
+- Efter lyckad registrering är användaren inloggad och omdirigeras till applikationen
+
+För **Inloggning och utloggning** ges:
+- Inloggningsformuläret visas för icke-autentiserade användare
+- Korrekt e-post och lösenord leder till autentiserad session
+- Felaktiga uppgifter ger ett begripligt felmeddelande
+- Inloggad användare kan logga ut och sessionen avslutas
+
+Exakt hur acceptance criterias ska se ut finns inget facit på. Men de ska svara på frågan ovan för att säkerställa att det vi arbetat med är klart.
+
+Om Definition of Done finns på plats i gruppen så är det gruppens generella 'kvalitetskrav' som gäller för all kod ni levererar, oavsett story. DoD gäller då på allt, utöver acceptance criterias.
+Exempel på DoD: koden är granskad av minst en annan gruppmedlem, den går att köra lokalt utan fel, och den är mergad till main via pull request. 
+Acceptance criteria och DoD kompletterar varandra: en story är klar när båda är uppfyllda. 
+Exempelvis kan gruppen ha Code review och merge ska göras på samtliga User Stories - då hade det inte behövts i acceptance criterias (om man inte vill vara extra tydlig förstås).
+
+**4. Bryt ned i tasks**
+Nu ska arbetet konkretiseras i utförbara tasks. 
+Undvik att skriva exakt alla detaljer — det lämnas till den som utför arbetet att lösa på det sätt de finner bäst. Det som kan vara svårt är att hitta rätt nivå: tasks ska varken vara för grova eller för detaljrika. Sikta på att varje task ryms inom en arbetsdag — på så sätt går arbetet framåt och kodbasen växer steg för steg.
+
+Utifrån ovan och för **Registrering** skapas följande tasks:
+- Skapa registreringskomponent (UI)
+- Koppla formulär mot autentiserings-API
+- Hantera felrespons från API
+- Code review och merge
+
+och för **Inloggning och utloggning**;
+- Skapa inloggningskomponent (UI)
+- Koppla formulär mot autentiserings-API
+- Hantera felrespons från API
+- Implementera utloggning och rensa session
+- Code review och merge
+
+**5. Estimera**
+Slutligen, sätt ett tidsestimat per task — tillsammans bildar de ett estimat för hela user storyn.
+Ni kommer troligtvis landa lite fel – det är helt i sin ordning och blir bättre med varje sprint.  
+Är ni inte överens — diskutera varför. Ofta avslöjar oenighet att tasken är otydlig eller för stor eller att vissa gruppmedlemmar har mer information att delge.
+
+Det finns metoder som kan underlätta estimering i grupp, exempelvis [Planning poker](https://www.atlassian.com/blog/platform/a-brief-overview-of-planning-poker) — ett enkelt sätt att få fram ett gemensamt estimat utan att en person dominerar diskussionen.
+
 
 ---
-
 
 
 ### Innan ni börjar koda
