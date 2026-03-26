@@ -101,31 +101,120 @@ Kursplanen är kursens formella dokument som fastställts av högskolan. När ku
 Du hittar [kursplanen genom att söka på kurskoden DV1707 via BTH’s hemsida](https://plan.bth.se/courses/DV1707).
 
 
+## Betygsskala
 
-## Ladok
+Kursen bedöms med betygen **Godkänd (G)**, **Underkänd (U)** och
+**Komplettering krävs (Ux)**.
 
-Enligt kursplanen finns ett antal ladokmoment och de är kopplade till kursens kursmoment enligt följande.
+För G på hela kursen krävs G på samtliga tre examinationsmoment.
 
-| Kursens moment       | Ladok moment enligt kursplan |
-|----------------------|------------------------------|
-| Sprint 0 + Sprint 1  | Inlämningsuppgift 1 á 1.5hp  |
-| Sprint 2 + Sprint 3  | Inlämningsuppgift 2 á 2.5hp  |
-| Sprint 4 + Sprint 99 | Presentation á 3.5hp         |
+---
 
+## Examinationsmoment
 
+Kursen examineras i tre moment som löper över kursens sprintar enligt följande:
 
+| Moment | Ladokmoment | Sprintar | Lärandemål |
+|--------|-------------|---------|-----------|
+| Inlämningsuppgift 1 | 2605 — 1,5 hp | Sprint 0 + Sprint 1 | 4.1 |
+| Inlämningsuppgift 2 | 2615 — 2,5 hp | Sprint 2 + Sprint 3 | 4.2 |
+| Presentation | 2625 — 3,5 hp | Sprint 4 + Sprint 99 | 4.2, 4.3a, 4.3b |
 
-## Betyg & uppgifter
+---
 
-Betygsskalan i kursen är Godkänd (G), Underkänd (U) och Komplettering krävs (Ux). 
-Kursens består av ett antal uppgifter som är kopplade till respektive moment och sprint enligt ovan tabell. 
-För att få godkänt på respektive moment, krävs godkända uppgifter kopplade till momentet.
+### Inlämningsuppgift 1 (2605) — 1,5 hp
+**Sprintar:** 0 och 1
 
-Varje respektive uppgift består av en gruppgemensam och en individuell del. I samband med kursslut och examination gäller även en presentation.
+Kopplat till lärandemål **4.1**:
+> Redogöra för vedertagna metoder och arbetssätt för effektivt samarbete i team.
 
-Krav och instruktioner för uppgifterna finns på respektive sida för respektive sprint.
+Underlaget för detta moment är sprintinlämningarna från sprint 0 och sprint 1 —
+både den gruppgemensamma och den individuella delen.
 
-För att få G på hel kurs, krävs G på samtliga moment.
+**För G krävs:**
+- Samtliga individuella reflektioner för sprint 0 och sprint 1 är inlämnade
+  och behandlar rubrikerna med konkret och personlig 
+- Reflektionerna visar förmåga att koppla egna erfarenheter till agila
+  metoder och arbetssätt
+- Gruppens sprintdokumentation visar att arbetet bedrivits strukturerat med
+  sprint planning, leveransdokumentation och retrospective
 
-Vid Ux på vid en uppgift (och således moment), ges feedback om vad som behöver kompletters, hur detta ska göras och när.
+---
 
+### Inlämningsuppgift 2 (2615) — 2,5 hp
+**Sprintar:** 2 och 3
+
+Kopplat till lärandemål **4.2**:
+> Utforma, utveckla och leverera en komplett och fungerande webbapplikation
+> baserat på en kravspecifikation, med möjlighet till egna val och prioriteringar.
+
+Underlaget för detta moment är sprintleveranserna från sprint 2 och sprint 3 —
+källkod, dokumentation och individuella reflektioner.
+
+**För G krävs:**
+- Webbapplikationen utvecklas aktivt och i riktning mot MVP-kraven i
+  kravspecifikationen
+- Koden är versionshanterad via GitHub Flow med pull requests och kodgranskning
+- Sprintleveranser är dokumenterade och inlämnade enligt instruktioner för
+  respektive sprint
+
+---
+
+### Presentation (2625) — 3,5 hp
+**Sprintar:** 4 och 99
+
+Kopplat till lärandemål **4.2**, **4.3a** och **4.3b**:
+> 4.2 Utforma, utveckla och leverera en komplett och fungerande webbapplikation
+> baserat på en kravspecifikation, med möjlighet till egna val och prioriteringar.
+
+> 4.3a Utifrån ett aktivt deltagande i grupparbete kunna diskutera och problematisera
+> olika kriterier för hållbart grupparbete.
+
+> 4.3b Kritiskt granska och analysera en annan grupps tekniska lösning.
+
+Underlaget för detta moment är sprintleveranserna från sprint 4 och sprint 99,
+gruppens presentation vid kursslut samt individuell kodgranskning av en annan
+grupps lösning.
+
+**För G krävs:**
+- Webbapplikationen uppfyller MVP-kraven i kravspecifikationen
+- Gruppen presenterar sin produkt och sitt arbetssätt vid kursslut
+- Du deltar aktivt i presentationen
+- Du genomför och lämnar in en skriftlig kritisk granskning av en annan
+  grupps tekniska lösning
+
+---
+
+## G-kriterier per sprint
+
+Varje sprint avslutas med två inlämningar: en gruppgemensam och en individuell.
+Båda krävs för att sprinten ska anses godkänd som underlag för respektive moment.
+
+**För G på den gruppgemensamma inlämningen krävs generellt:**
+- Submission-branch och PR är skapade och namngivna enligt instruktioner
+- `docs/sprint-X.md` är ifylld med innehåll under samtliga rubriker
+- Källkod är körbar och fri från secrets
+- Retrospektivet innehåller minst en konkret, namngiven åtgärd
+
+**För G på den individuella inlämningen krävs generellt:**
+- Inlämnad i tid via lärplattformen
+- Samtliga rubriker behandlade med konkret och personlig substans
+- Minst 250 ord
+
+:::caution[Sprintspecifika krav]
+Kraven ovan är generella. Varje sprint kan ha specifika tilläggskrav —
+håll er uppdaterade på instruktionerna för respektive sprint.
+:::
+
+---
+
+## Komplettering (Ux)
+
+Vid Ux på ett moment ges skriftlig feedback som beskriver vad som behöver
+kompletteras, hur det ska göras och när deadline för komplettering är.
+Feedback ges via lärplattformen eller som kommentarer i PR:et beroende på
+vad som behöver åtgärdas.
+
+En Ux på en sprintinlämning innebär inte automatiskt Ux på momentet —
+möjlighet till komplettering ges innan momentet stängs. Detta kommuniceras
+tydligt i feedbacken.
