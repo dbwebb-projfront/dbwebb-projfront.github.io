@@ -12,6 +12,7 @@ Materialet på den här sidan är inte komplett och uppdateras löpande.
 :::note[Generella instruktioner]
 Denna sidan är generalla instuktioner för hur man går tillväga för att göra en inlämning för en sprint.  
 **Det är alltså viktigt att man håller sig uppdaterad av specifika krav för varje sprint**.  
+Eventuella specifika krav finns på respektive sprints sida.
 :::
 
 ---
@@ -23,12 +24,12 @@ gruppmedlem.
 
 - Den individuella lämnas in via kursens lärplattform. 
 
+Se nedan för instruktioner.
+
 ---
 
 
 ## Gruppgemensam inlämning
-
-
 
 ### Vad som ska ingå
 
@@ -44,10 +45,10 @@ Inlämningen görs som ett Pull Request (via en submission branch) och ska inneh
 
 #### 2. Sprint planning-dokumentation
 
-Format: Markdown-fil
+Format: Markdown, i fil `docs/sprint-X.md`
 
 Dokumentera er sprint backlog **vid sprintens start**, efter sprint planning.
-Följande ska framgå tydligt:
+Följande ska framgå tydligt (använd nedan rubriker):
 
 - **Sprint-mål** – vad är huvudmålet för denna sprint? (1–2 meningar)
 - **Valda user stories** – vilka user stories har ni valt att arbeta med?
@@ -60,9 +61,9 @@ Använd gärna screenshots från ert backlog-verktyg, producera egen text eller 
 
 #### 3. Leveransdokumentation
 
-Format: Markdown-fil
+Format: Markdown i fil `docs/sprint-X.md`
 
-Dokumentera er sprint backlog **vid sprintens slut**. Följande ska framgå tydligt:
+Dokumentera er sprint backlog **vid sprintens slut**. Följande ska framgå tydligt (använd nedan rubriker):
 
 - **Färdigställda user stories** – vad levererades faktiskt under sprinten?
 - **Tasks** – vilka tasks färdigställdes?
@@ -71,6 +72,24 @@ Dokumentera er sprint backlog **vid sprintens slut**. Följande ska framgå tydl
 - **Definition of Done** – vad krävdes för att en story skulle anses klar?
 
 Komplettera gärna med text som förtydligar och förklarar.
+
+#### 4. Sprint retrospective 
+
+Format: Markdown i fil `docs/sprint-X.md`
+
+Dokumentera ert sprint retrospective från sprintens avslut. 
+
+Det ska ha genomförts som ett möte i gruppen och ska dokumenteras utifrån följande (använd nedan rubriker i filen):
+
+- Vad fungerade bra? T ex vad ni är nöjda med — tekniskt, processmässigt eller samarbetsmässigt?
+- Vad fungerade mindre bra?
+- Vad skapade friktion, förseningar eller frustration? Var ärliga — retrospektivet är ett verktyg för förbättring, inte en värdering av gruppen.
+- Vad gör vi annorlunda nästa sprint?
+- Formulera minst en konkret åtgärd — inte bara en insikt. En åtgärd är något ni faktiskt kan följa upp: vad ska göras, av vem och när?
+
+:::note[Tips]
+Det finns en exempelmall på hur `docs/sprint-X.md`bör konstrueras. Se här: [sprint-x-template.md](/kunskap/sprint-x-template)
+:::
 
 ---
 
@@ -95,6 +114,7 @@ om föregående submission-branch ännu inte granskats.
 - [ ] `docs/sprint-X.md` är ifylld med innehåll under samtliga rubriker
 - [ ] Backlog-screenshots (start och slut) finns i `docs/images/` och länkas från
       `sprint-X.md`
+- [ ] Retrospective är dokumenterat enligt rubriker insklusive minst en konkret, namngiven åtgärd
 - [ ] All kod är committad och pushad till `main`
 - [ ] Koden är körbar i största möjliga mån
 - [ ] Inga lösenord eller secrets är committade
@@ -113,12 +133,19 @@ git pull origin main
 git checkout -b submission-sprint-X
 ```
 
-**Steg 3** – Pusha branchen
+**Steg 3** - lägg till och commita texterna
+```bash
+git add README.md
+git add docs/sprint-X.md docs/images/
+git commit -m "docs: sprint X submission"
+```
+
+**Steg 4** – Pusha branchen
 ```bash
 git push origin submission-sprint-X
 ```
 
-**Steg 4** – Öppna ett Pull Request på GitHub mot `main` med titeln:
+**Steg 5** – Öppna ett Pull Request på GitHub mot `main` med titeln:
 ```
 Inlämning Sprint X – [Gruppnamn]
 ```
@@ -177,3 +204,6 @@ Använd nedanstående rubriker som utgångspunkt.
 
 - Vad hade jag kunnat göra annorlunda?
 - Vilka personliga mål har jag för nästa sprint?
+
+### 5. TIL (Today I Learned)
+- En konkret sak (eller flera) du lärt dig denna sprint — teknisk, processmässig eller annat.

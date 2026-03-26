@@ -1,0 +1,137 @@
+---
+title: sprint-x-template
+description: Exempel för gruppgemensam sprint-x.m
+---
+
+>
+> Denna template kan användas när ni i gruppen ska lämna in er `sprint-X.md`
+>
+ 
+# Sprint X
+
+> **Sprint X** | [Startdatum] – [Slutdatum] | Team: [Gruppnamn]
+
+---
+
+## 1. Sprint planning
+
+### Sprint-mål
+
+[1–2 meningar som beskriver vad ni ska uppnå denna sprint.]
+
+*Exempel: Målet för sprint 2 är att användare ska kunna logga in och se en lista över aktiva dokument i realtid.*
+
+### Valda user stories
+
+| ID | User story | Estimat (h) |
+|----|-----------|-------------|
+| US-101 | Som användare vill jag kunna logga in med mitt konto så att jag får tillgång till mina dokument. | 6 |
+| US-102 | Som användare vill jag se en lista över aktiva dokument så att jag kan välja vilket jag vill öppna. | 4 |
+
+### Tasks och fördelning
+
+**US-101 – Inloggning**
+
+| Task | Ansvarig | Estimat (h) |
+|------|----------|-------------|
+| Skapa login-formulär | emil | 2 |
+| Använda auth-endpoint | mattias | 3 |
+| Testa att login-flödet fungerar | emil | 1 |
+
+**US-102 – Dokumentlista**
+
+| Task | Ansvarig | Estimat (h) |
+|------|----------|-------------|
+| Hämta och rendera lista med filer från API | emil | 3 |
+| Styling och responsivitet | emil | 1 |
+
+### Acceptanskriterier
+
+**US-101**
+- Användaren kan ange användarnamn och lösenord och logga in
+- Felmeddelande visas vid felaktiga uppgifter
+- Användaren redirectas till lista med filer efter inloggning
+
+**US-102**
+- Listan visar filernas namn och senast ändrad
+- Listan med filer uppdateras utan reload/refresh
+- Fungerar på mobil och desktop
+
+### Backlog vid sprintstart
+
+Bild av backlog vid sprintens start.  
+Kan placeras t e x `images/sprint-X-start.png`. 
+Hör med lärare om ni önskar använda andra format för dokumentering.
+
+
+
+---
+
+## 2. Leveransdokumentation
+
+### Färdigställda user stories
+
+| ID | User story | Status |
+|----|-----------|--------|
+| US-101 | Inloggning | Klar |
+| US-102 | Dokumentlista | Delvis klar |
+
+### Tasks och utfall
+
+**US-101 – Inloggning**
+
+| Task | Ansvarig | Estimat (h) | Utfall (h) |
+|------|----------|-------------|------------|
+| Skapa login-formulär | emil | 2 | 2 |
+| Använda auth-endpoint | mattias | 3 | 5 |
+| Testat login-flödet | emil | 1 | 1 |
+
+**US-102 – Dokumentlista**
+
+| Task | Ansvarig | Estimat (h) | Utfall (h) |
+|------|----------|-------------|------------|
+| Hämta och rendera lista med filer från API | emil | 3 | 3 |
+| Styling och responsivitet | emil | 1 | 0 |
+
+### Definition of Done
+
+Vår DoD under denna sprint:
+- Funktionaliteten är implementerad och körbar
+- Koden är granskad och godkänd via pull request
+- Acceptanskriterierna är uppfyllda och manuellt testade
+- Inga kända buggar finns kvar
+
+### Kommentarer
+
+*US-102 är nästan klar — lista över alla filer hämtas och renderas korrekt men styling återstår. Styling flyttas till sprint X+1 som en ny task. Integrationen mot auth-endpointen tog längre tid än estimerat på grund av CORS-problem som inte var kända vid planning.*
+
+### Backlog vid sprintslut
+
+Bild av backlog vid sprintens start.  
+Kan placeras t e x `images/sprint-X-start.png`.  
+Hör med lärare om ni önskar använda andra format för dokumentering.
+
+
+---
+
+## 3. Retrospective
+
+*Retrospektivet genomfördes [datum] med hela gruppen närvarande.*
+
+### Vad fungerade bra?
+
+[Beskriv vad ni är nöjda med — tekniskt, processmässigt eller samarbetsmässigt.]
+
+*Exempel: Vi hade bra kommunikation under sprinten och daily standups fungerade väl. Kodgranskningen i PRs gav bra diskussioner.*
+
+### Vad fungerade mindre bra?
+
+[Beskriv vad som skapade friktion, förseningar eller frustration. Var ärliga — retrospektivet är ett verktyg för förbättring, inte en värdering av gruppen.]
+
+*Exempel: Estimaten för backend-integration var för optimistiska. Vi hade inte räknat med CORS-problematik och liknande oväntade hinder.*
+
+### Vad gör vi annorlunda nästa sprint?
+
+[Minst en konkret åtgärd — inte bara en insikt. Vad ska göras, av vem och när?]
+
+*Exempel: Emil lägger till en buffert på alla backend-relaterade estimat från och med nästa sprint. Vi beslutar detta gemensamt vid nästa sprint planning, men vi lutar åt att dessa estimat ska multipliceras med pi (3.145926).*
