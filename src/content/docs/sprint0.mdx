@@ -5,7 +5,7 @@ description: Instruktioner för sprint 0.
 
 
 :::danger[Under konstruktion]
-Materialet på den här sidan är inte komplett och uppdateras löpande.
+Materialet på den här sidan är inte komplett och uppdateras löpande fram till kursstart.
 :::
 
 ---
@@ -28,7 +28,7 @@ En väl genomförd sprint 0 ger ett stabilt fundament och minskar friktionen i d
 Kursen använder ett GitHub-repository i kursens organisation som central plats för er tekniska implementation och er gruppgemensamma dokumentation. 
 Ni forkar ett startrepo som kursledningen skapat i organisationen.
 
-Repot har följande struktur:
+Repot heter `coed`och har följande struktur:
 
 ```
 starter/
@@ -41,7 +41,7 @@ starter/
         ├── sprint-3.md
         ├── sprint-4.md
         ├── sprint-99.md
-````
+```
 
 Katalogen ```docs/``` ska innehålla er gruppgemensamma dokumentation. 
 För varje sprint lämnar ni in en sprint-X.md i denna katalog, med det innehåll som specificeras för respektive sprint.  
@@ -49,7 +49,23 @@ För varje sprint lämnar ni in en sprint-X.md i denna katalog, med det innehål
 - en kort beskrivning av projektet. 
 - instruktioner för hur man kör applikationen lokalt.
 
+### Sätt upp gruppens repo
 
+**En person i gruppen ansvarar för att forka startrepot och bjuda in övriga gruppmedlemmar.** 
+
+Gör så här:
+
+1. Navigera till startrepot coed i kursens GitHub-organisation.
+2. Klicka på Fork och välj ditt personliga konto som destination/owner.
+3. Byt namn på repot till `coed-grupp-XX` där XX är ert teamnummer från Canvas, t.ex. coed-grupp-3 om ni är Team 3.
+4. Gå till Settings -> Collaborators i det nyskapade repot.
+5. Klicka på Add people och bjud in varje gruppmedlem med deras GitHub-användarnamn eller e-postadress.
+6. Varje inbjuden person accepterar inbjudan via e-post eller via notisen på GitHub.
+7. Alla i gruppen klonar sedan repot lokalt: git clone `repo-url`
+
+
+**VIKTIGT:**
+> Bara en person per grupp ska forka startrepot. Kontrollera att alla gruppmedlemmar har fått och accepterat sin inbjudan innan ni börjar arbeta.
 
 ## Övningar
 
@@ -96,6 +112,32 @@ Filen ska innehålla följande rubriker och innehåll:
     - Har ni en plan för om samarbetet inte fungerar som tänkt - har ni ett kontrakt för hur samarbetet ska gå till? 
     - Vilket planeringsverktyg har ni valt och varför?
 
+### Inlämning
+
+För instruktioner angående inlämning så gäller följande;
+
+#### Submission-branch och PR
+
+I slutet av den här sprinten, eller tidigt i nästa sprint, så skapar ni i ert gruppgemensamma repo en branch som ni namnger `submission-sprint-0`.
+Uppdatera `docs/`-katalogen med dokumentation enligt ovan och öppna sedan ett Pull Request mot `main`.
+
+Lärare granskar och mergar – **ni ska inte merga PR:et själva**. Vid behov av
+komplettering sker detta via kommentarer i PR:et. Ni kan påbörja nästa sprint även
+om föregående submission-branch ännu inte granskats.
+
+
+:::note
+Om ni känner er osäkra på hur man gör en branch o.s.v. kan ni ta en titt på sidan (checklistan som finns där gäller dock ej denna första sprint); 
+
+[hur-man-gör-en-inlämning](/kunskap/submission_instructions#hur-man-gör-en-inlämning)
+:::
+
+
+#### Checklista innan grupp-inlämning
+
+- [ ] `docs/sprint-X.md` är ifylld med innehåll under samtliga rubriker enligt ovan
+
+Glöm inte den individuella uppgiften nedan.
 
 
 ### Individuell uppgift
