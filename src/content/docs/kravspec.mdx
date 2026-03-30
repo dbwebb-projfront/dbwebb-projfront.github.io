@@ -50,3 +50,300 @@ CoEd - kravspecifikation
 ----------------------------------------------
 
 *presenteras vid kursstart*
+
+---
+:::note
+Kravspecifikation kan uppdateras under kursens gång - titta in här då och då.
+:::
+---
+
+# CoEd 
+
+### KRAVSPECIFIKATION
+
+---
+
+### versionshistorik
+
+| Version | Datum    | Förändring                  |
+|---------|----------|-----------------------------|
+| 0.1     | 2026-03-02 | Från utkast till 0.1      |
+| 0.2     | 2026-03-09 | 4.0 MVP fastställd        |
+
+
+---
+
+## 1. Projektöversikt
+
+### 1.1 Syfte
+
+Utveckla en webbaserad realtids-kodeditor där flera användare kan koda tillsammans samtidigt, liknande [CodeSandbox](https://codesandbox.io/), [Replit](https://replit.com/collaboration) eller [VS Code Live Share](https://visualstudio.microsoft.com/services/live-share/). Systemet ska vara responsivt, användarvänligt och hantera samtidig kodredigering på ett robust sätt.
+
+### 1.2 Målgrupp
+
+| Prioritet | Målgrupp |
+|-----------|----------|
+| Primär    | Utvecklare som behöver samarbeta med kod i realtid |
+| Sekundär  | Team som vill genomföra code reviews eller pair programming |
+| Tertiär   | Utvecklare som vill demonstrera kod live |
+
+### 1.3 Tekniska ramar
+
+| Område           | Specifikation |
+|------------------|---------------|
+| Frontend         | Valfritt ramverk (rekommendation: React) |
+| Backend          | Tillhandahålls av kursledningen |
+| Versionshantering | GitHub och GitHub Flow |
+| Deployment       | GitHub Pages |
+
+### 1.4 Requirements engineering
+
+Som en del av det agila arbetssättet förväntas er grupp:
+
+- Bryta ned varje funktionellt krav till konkreta user stories
+- Definiera acceptance criteria för varje user story
+- Identifiera edge cases och tekniska utmaningar
+- Estimera arbetsinsats för varje uppgift
+- Skapa konkreta tasks i ert planeringsverktyg (GitHub Projects/Trello)
+
+**Format för user stories:** *"Som [roll] vill jag [funktionalitet] så att [nytta]"*
+
+**Tips för acceptance criteria:**
+- Var specifik
+- Använd givet/när/då-format när det är lämpligt
+- Tänk på både happy path och edge cases
+- Inkludera prestandakrav där det är relevant
+
+---
+
+## 2. Funktionella krav
+
+### 2.1 Användarhantering
+
+#### 2.1.1 Registrering och autentisering
+
+**Prioritet:** Hög
+
+Systemet ska tillåta användare att skapa konton och logga in för att komma åt sina filer. Autentisering hanteras via `auth.emilfolino.se`.
+
+- Användare ska kunna registrera nya konton
+- Användare ska kunna logga in och ut
+- Systemet ska validera inputs och lösenord
+- Felhantering ska finnas för ogiltiga inputs
+
+#### 2.1.2 Användarprofil
+
+**Prioritet:** Medel
+
+Användare ska kunna visa och redigera sin profilinformation.
+
+- Användare ska kunna se sin profilinformation
+- Användare ska kunna uppdatera sitt namn/användarnamn
+- Användare ska kunna ändra sitt lösenord
+- Ändringar ska sparas och synas direkt
+
+---
+
+### 2.2 Filhantering
+
+#### 2.2.1 Skapa och ta bort filer
+
+**Prioritet:** Hög
+
+Användare ska kunna skapa nya filer och ta bort befintliga. Varje projekt kan innehålla en eller flera kodfiler.
+
+- Användare ska kunna skapa nya filer
+- Filer ska kunna namnges vid skapande
+- Användare ska kunna ta bort sina egna filer
+- Bekräftelse ska krävas innan borttagning
+- Borttagna filer ska försvinna permanent
+
+#### 2.2.2 Lista filer
+
+**Prioritet:** Hög
+
+Användare ska kunna se en översikt över alla sina filer för att enkelt hitta och öppna dem.
+
+- Användare ska se alla sina filer (ägda och delade)
+- Listan ska visa relevant metadata (titel, språk, senast ändrad, skapare)
+- Listan ska vara sorterbar och eventuellt sökbar
+- Användare ska kunna öppna filer genom att klicka på dem
+- Delade filer ska ha visuell indikation
+
+---
+
+### 2.3 Kodredigering
+
+#### 2.3.1 Grundläggande kodredigering
+
+**Prioritet:** Hög
+
+Användare ska kunna skriva, redigera och navigera kod i editorn med grundläggande editorfunktionalitet.
+
+- Användare ska kunna skriva kod i editorn
+- Användare ska kunna markera, kopiera, klippa och klistra in kod
+- Tab-tangent ska indentera kod
+- Automatisk indentation vid ny rad
+- Ändringar ska sparas automatiskt
+- Stöd för unicode-tecken och specialtecken
+
+#### 2.3.2 Syntax highlighting
+
+**Prioritet:** Hög
+
+Kod ska färgläggas baserat på programmeringsspråkets syntax.
+
+- Färgschema ska vara läsbart (mörkt tema rekommenderat)
+- Syntax highlighting ska baseras på filextension
+
+#### 2.3.3 Radnummer och cursorposition
+
+**Prioritet:** Hög
+
+Visa radnummer och användarens cursorposition för bättre navigation i koden.
+
+- Radnummer ska visas till vänster om koden
+- Aktiv rad ska vara visuellt markerad
+- Cursorposition ska visas i UI
+- Användare ska kunna hoppa till specifik rad
+
+#### 2.3.4 Söka och ersätta (Find & Replace)
+
+**Prioritet:** Medel
+
+Användare ska kunna söka efter text i koden och ersätta matchningar.
+
+- Sökfunktion ska kunna öppnas med kortkommando
+- Användare ska kunna söka efter text i aktiv fil
+- Matchningar ska highlightas i koden
+- Användare ska kunna hoppa mellan matchningar
+- Replace-funktionalitet (replace single, replace all)
+- Case-sensitive sökning (valfri toggle)
+
+#### 2.3.5 Ångra/Gör om (Undo/Redo)
+
+**Prioritet:** Medel
+
+Användare ska kunna ångra och göra om ändringar i sin kod.
+
+- Undo ska fungera med kortkommando
+- Redo ska fungera med kortkommando
+- Undo/redo ska fungera per fil, inte globalt
+
+---
+
+### 2.4 Realtidssamarbete
+
+#### 2.4.1 Samtidig redigering
+
+**Prioritet:** Hög
+
+Flera användare ska kunna redigera samma fil samtidigt.
+
+- Flera användare ska kunna öppna och redigera samma fil samtidigt
+- Ändringar från en användare ska synas för övriga i realtid
+- Syntax highlighting ska uppdateras korrekt efter ändringar från andra
+
+#### 2.4.2 Visa aktiva användare
+
+**Prioritet:** Hög
+
+Användare ska kunna se vilka andra som är aktiva och vilka filer de arbetar i.
+
+- En lista/panel ska visa alla användare som har projektet öppet
+- Listan ska uppdateras när någon ansluter eller kopplar från
+- Varje användare ska ha en unik färg (för cursors)
+- Användarens namn ska visas
+- Indikering på vilken fil varje användare har öppen
+
+#### 2.4.3 Markera användarposition (cursors)
+
+**Prioritet:** Hög
+
+Visa var andra användare har sin cursor i den aktiva filen.
+
+- Cursorposition ska uppdateras i realtid när användare flyttar cursor
+- Cursors ska försvinna när användare byter fil eller kopplar från
+- Cursors ska vara visuellt distinkta men inte distraherande
+
+---
+
+### 2.5 Delning och behörigheter
+
+#### 2.5.1 Dela filer/projekt
+
+**Prioritet:** Hög
+
+Fil-/projektägare ska kunna dela filer/projekt med andra användare så att de kan samarbeta.
+
+- Ägare ska kunna lägga till andra användare till filer/projektet
+- Användare ska kunna läggas till via användarnamn
+- Delade användare ska få tillgång till filer/projektet
+- Delade projekt ska visas i användarens fillista, tydligt märkt som delat
+- Användare ska kunna ta bort sig själv från delade projekt
+
+---
+
+## 3. Icke-funktionella krav
+
+### 3.1 Prestanda
+
+- Sidladdning med innehåll ska ske inom rimlig tidsrymd
+- Realtidsuppdateringar ska ske inom rimlig tidsrymd
+- Syntax highlighting ska inte lagga vid filer upp till 1 000 rader
+
+### 3.2 Användbarhet
+
+- Gränssnittet ska vara intuitivt för utvecklare
+- Systemet ska vara responsivt (primärt desktop)
+- Felmeddelanden ska vara tydliga och hjälpsamma
+
+### 3.3 Säkerhet
+
+- Endast autentiserade användare kan komma åt systemet
+- Användare kan endast se och redigera projekt de har behörighet till
+
+### 3.4 Tillgänglighet
+
+- Systemet ska följa grundläggande tillgänglighetsprinciper
+- Färgkontraster ska vara tillräckliga
+
+### 3.5 Kompatibilitet
+
+- Systemet ska fungera i senaste versionerna av Chrome och Firefox
+
+---
+
+## 4. Prioritering och MVP
+
+### 4.1 Must-have (MVP – Minimum Viable Product)
+
+För att projektet ska anses godkänt måste samtliga krav med **prioritet Hög** vara implementerade.
+
+En godkänd implementation innebär att följande scenario fungerar utan fel:
+
+1. En användare registrerar ett konto och loggar in.
+2. Användaren skapar en ny fil, skriver kod med syntax highlighting och bjuder in en annan användare till projektet.
+3. Den inbjudna användaren loggar in, öppnar samma fil och börjar redigera – båda användarna ser varandras ändringar och cursorpositioner i realtid.
+4. Koden sparas automatiskt.
+5. Båda användarna kan se vilka andra som är aktiva i projektet.
+6. Applikationen är deployad och åtkomlig via GitHub Pages.
+7. Koden är versionshanterad och körbar lokalt enligt README.
+
+---
+
+## 5. Tekniska rekommendationer
+
+### 5.1 Code editor-bibliotek
+
+Bygg **inte** en editor från scratch – använd ett färdigt bibliotek.
+
+| Bibliotek | Kommentar |
+|-----------|-----------|
+| **Monaco Editor** *(rekommenderat)* | VS Code:s editor, bäst features och IntelliSense |
+
+### 5.2 Övriga tekniska tips
+
+| Teknik | Användning |
+|--------|------------|
+| Socket.io-client | Realtidskommunikation via WebSocket |
