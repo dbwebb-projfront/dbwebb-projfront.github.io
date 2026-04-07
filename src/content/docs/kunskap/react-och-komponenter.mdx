@@ -1,0 +1,157 @@
+---
+title: React och komponenter
+description: En introduktion till react och hur vi kan jämföra det med web components.
+---
+
+Exemplen som används i denna artikel finns i repot [dbwebb-projfront/react-components](https://github.com/dbwebb-projfront/react-components). Det användes även under föreläsningen på tisdagen i sprint 1.
+
+Exemplet nedan kommer växla mellan web components som vi redan är bekanta med och sedan hur det hade sett ut i en React applikation. Applikationen vi ska utveckla är en liten räknare, som sedan vid ett visst värde kommer göra något speciellt.
+
+JAg har försökt att lägga sökvägen till filerna i alla kodexempel med utgångspunkt från roten av react-components repot.
+
+## App-komponenten
+
+Vi börjar med en komponent som vi efter React förebild kallar `App`. Som en web-component ser den ut på följande sätt.
+
+```javascript
+// web-components/components/app-component.js
+
+export default class AppComponent extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <div class="container">
+        <h1>Web Components Example</h1>
+        <counter-component></counter-component>
+      </div>
+      `
+  }
+}
+```
+
+vi har ju som vanligt skapat en `main.js` fil i projektet där vi har importerat komponenterna och skapat `customElements`.
+
+I React ser en liknande komponent ut på följande sätt. I React används filändelsen och syntaxen `.jsx`. Det är en sorts upphottad HTML, där vi på sätt och vis skriver HTML och JavaScript blandat. Vi ser att komponenter skrivs med stora bokstäver och att attributnamnen skrivs på lite annat sätt än ren HTML. Annars är det stor likhet med det exemplet vi har ovan.
+
+```jsx
+// react-example/src/App.jsx
+
+import './App.css'
+import Counter from './components/Counter'
+
+function App() {
+  return (
+    <div className="container">
+      <h1>React Example</h1>
+      <Counter />
+    </div>
+  )
+}
+
+export default App
+```
+
+
+
+## Räknare-komponenten
+
+Vi går nu vidare med nästa komponent. Vi kommer att utveckla koncepten under tiden men börjar med en så enkel komponent som möjligt. Här har vi alltså en komponent som renderar ut värdet av en instansvariabel.
+
+```javascript
+// web-components/components/counter-component.js
+export default class CounterComponent extends HTMLElement {
+  constructor() {
+    super()
+
+    this.count = 0
+  }
+  
+  connectedCallback() {
+    this.innerHTML = `<p>${this.count}</p>`
+  }
+}
+```
+
+I React gör vi på ett litet annat sätt. Vi skapar istället för instansvariabeln en "state variable" med hjälp av funktionen `useState` i React. När vi använder `useState` funktionen får vi tillbaka två objekt: `count` där vi kan hämta ut nuvarande värde och sedan `setCount` där vi kan sätta värdet av `count`. 
+
+```jsx
+// react-example/src/Counter.jsx
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <h2>{count}</h2>
+  )
+}
+
+export default Counter
+```
+
+Vi vill nu lägga till en knapp för att öka på vår räknare, låt oss börja i vår webb komponent. Nu blir det lite mer kod, men den förklaras under.
+
+```javascript
+// web-components/components/counter-component.js
+export default class CounterComponent extends HTMLElement {
+  constructor() {
+    super()
+
+    this.count = 0
+  }
+  
+  connectedCallback() {
+    this.render()
+  }
+
+  increase() {
+    this.count += 1
+    this.render()
+  }
+
+  render() {
+    while(this.firstChild){
+      this.removeChild(this.firstChild)
+    }
+
+    let countContainer = document.createElement("div")
+    countContainer.className = "count-container"
+
+    let counterTitle = document.createElement("h2")
+    counterTitle.textContent = this.count
+
+    let increaseButton = document.createElement("button")
+    increaseButton.textContent = "ÖKA"
+    increaseButton.className = "button"
+    increaseButton.addEventListener("click", () => this.increase())
+
+    countContainer.append(counterTitle)
+    countContainer.append(increaseButton)
+
+    this.append(countContainer)
+  }
+}
+```
+
+Vi har nu flyttat ut rendering av komponenten till en `render` funktionen, här börjar vi med att rensa ut i komponenten, för att sedan lägga till räknaren och en knapp för att öka värdet på `this.count`.
+
+I React kan detta förenklas en del med hjälp av JSX syntaxen och detta är nog en av de stora fördelarna med React och andra JavaScript-ramverk. I React uppdateras de delar av komponenterna som är kopplat till "state variables" när dessa ändras. Vi kan därför kort och gott lägga till knappen och när den klickas på sätta värdet på `count` med hjälp av `setCount`.
+
+```jsx
+// react-example/src/Counter.jsx
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="count-container">
+      <h2>{count}</h2>
+      <button className="button" onClick={() => setCount(count + 1)}>ÖKA</button>
+    </div>
+  )
+}
+
+export default Counter
+```
+
+Fortsättning följer.
