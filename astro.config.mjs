@@ -32,6 +32,7 @@ export default defineConfig({
 				{
 					label: "Sprints",
 					items: [
+						'inspelningar',
 						'kravspec',
 						'sprint0',
 						'sprint1',
