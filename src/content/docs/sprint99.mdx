@@ -2,3 +2,201 @@
 title: Sprint 99
 description: Instruktioner för sprint 99.
 ---
+
+
+# Avslut och leverans
+
+Sprint 99 är kursens sista sprint och omfattar en vecka. Fokus ligger på att färdigställa produkten, dokumentera ert arbete, utföra en granskning/review och presentera det ni byggt.
+
+
+Med andra ord - detta är er slutleverans.
+Ni ska färdigställa och leverera ert resultat. På denna sida anges vad som ingår i denna leverans. 
+
+_I den mån tid finns kan eventuell finputsning göras för att slutföra det som återstår.
+Prioritera MVP-kraven._
+
+---
+
+## Kraven för denna sprint är följande:
+
+
+Kortfattat:
+
+1. **Slutleverans produkt** (webbapplikationen) av denna uppfyller MVP-kraven i kravspecifikationen och är inlämnad via PR mot main enligt nedan.
+2. Ovan inlämning inkluderar en **Grupprapport**.
+3. **Presentatione** - gruppen presenterar sin produkt och sitt arbetssätt vid kursslut. Detta sker live.
+4. Gruppen genomför och lämnar in en **Kodgranskning** av en annan grupps tekniska lösning.
+5. Varje gruppmedlem sammanställer en **Individuell dokumentation**.
+
+
+
+---
+
+Nedan anges detaljer för varje del.
+
+
+## 1. Slutleverans produkt - `submission-sprint-99`
+
+Inlämningen görs via en `submission-sprint-99`-branch och ett PR mot main, på samma sätt som tidigare sprintar. 
+PR:et ska innehålla, som tidigare en 
+en gemensam rapport som sammanfattar projektet samt en granskning av en annan grupps produkt. Innehåll och rubriker specificeras nedan.
+Glöm inte en sista uppdatering av repots README.md som minst ska innehålla slutliga instruktioner för att köra applikationen.
+
+---
+
+## 2. Grupprapport
+
+Grupprapportens innehåll ska vara enligt rubrikerna nedan och placeras i och heta `docs/sprint-99.md`. Denna ska ingå i branchen `submission-sprint-99` och således vara en del av ovan PR.
+
+Rubriker och innehåll som ska användas:
+
+- **Kort beskrivning av produkten** - vad som levererats
+- **Vilka MVP-krav som uppfylls** - ta gärna med de punkter som finns i kravspecifikationen under 4.1
+- **Hur gruppen arbetat** — process, verktyg och arbetssätt
+- **Vad som fungerade bra respektive mindre bra** - i ert samarete.
+- **Vad ni hade gjort annorlunda** - om ni startade projektet idag, vad hade ni gjort annorlunda.
+- **Länk till issue för kodgranskning** (se nedan under rubrik "Kodgranskning").
+
+---
+
+
+## 3. Kodgranskning
+
+Varje grupp ska granska/'reviewa' en annan grupps kod utifrån punkterna nedan. 
+Granskningen ska lämnas in som en del av ovan `submission-sprint-99´-branch och således inkluderas i PR:et.
+
+Syfte och tanke med detta förfarande är att slutleveransen ska genomgå en sista review och verfiering inför slutleverans - granskningen sker i det tillstånd som repot är just då. 
+
+För att en annan grupp ska kunna utföra en review på er, behöver din grupp bjuda in medlemmar fån den granskande gruppen. Hur ni gör detta gör ni upp med den andra gruppen.  
+
+
+### 3.1 Granskningspar
+Granskning/review sker enligt nedan matris. Granskningen sker parvis, vilket kortfattat innebär att den grupp som granskar en annan grupps arbete blir själva granskade av samma grupp.
+
+Till exempel om grupp 1 granskar grupp 2, så granskar grupp 2 grupp 1.
+
+
+| Par | Granskande grupp | Granskar |
+|--- | --- | --- |
+| A | 1 | 7 |
+| A | 7 | 18 |
+| A | 18 | 1 |
+| B | 10 | 12 |
+| B | 12 | 10 |
+| C | 15 | 16 |
+| C | 16 | 15 | 
+
+
+
+
+### 3.2 Ge åtkomst till granskande grupp
+För att vara extra tydlig - den grupp som ska utföra granskningen på er grupp behöver alltså tillgång till ert repo.
+Detta behöver ni lösa mellan grupperna.
+Förslagsvis så bjuder den grupp som ska granskas in den granskande gruppens medlemmar som collaborators med läsrättigheter i sitt GitHub-repo: `Settings -> Collaborators -> Add people`.
+
+
+### 3.3 Skapa ett issue 
+Den granskande gruppen skapar ett issue i den granskade gruppens repo. Namnge issuet enligt denna mall: 
+
+`Kodgranskning av Grupp X utförd av Grupp Y`
+
+### 3.4 Genomför granskningen  
+Skriv granskningen som en kommentar. Använd följande punkter som grund:
+
+- **Kodstruktur och organisation** – Hur är koden strukturerad? Är uppdelningen av till exempel komponenter logisk och tydlig?
+
+- **Läsbarhet** – Är koden lätt att förstå och följa? Namngivning av variabler, funktioner, komponenter och eventuella klasser?
+
+- **Felhantering** – Hanteras fel och kantfall på ett rimligt sätt?
+
+- **Återanvändbarhet** – Finns det onödig duplicering, eller används komponenter/funktioner som enkelt kan återanvändas?
+
+- **Tekniska val** – Är teknikvalen motiverade och ändamålsenliga för problemet?
+
+- **En sak ni skulle gjort annorlunda** – Om ni hade tagit över projektet, vad hade ni förändrat först?
+
+Om man behöver förtydliga, länka gärna till specifika filer och referera till dessa i så fall.
+
+- **Lämna in granskningen** Stäng issuet och lämnar in en länk till det som en del av er gruppgemensamma dokumentation. Länken kommer att se ut liknande denna; `https://github.com/githubuser/repo/issues/1` 
+
+
+---
+
+## 4. Presentation
+
+Presentationen hålls tisdag, onsdag och torsdag enligt schema. Schemat som presenteras här består av "slottar" om 1 till 1,5 timme.
+Vid varje slott deltar två till tre stycken grupper samt lärare. 
+Respektive grupp presenterar  15–20 minuter. Därefter ges utrymme för frågor från andra deltagare; alla deltagare förväntas ställa frågor och ge feedback. I synnerhet den grupp som granskat den presenterande gruppen. Eftersom indelningen är sådan att grupperna har granskat/review:at varandras arbete, kan delar från granskningen användas för frågor.
+
+Notera att alla gruppmedlemmar ska medverka vid presentationen. Om förhinder finns eller uppstår föranleder detta att förändringar behöver göras som påverkar upplägget och alla medverkande.
+
+Presentationen ska bestå av två delar som ska framgå vid presentationen (ordningen spelar ingen roll):
+
+- **Process och lärdomar**
+    - Beskriv och berätta om hur ni arbetat under kursens gång. Lyft gärna fram något ni förändrade eller justerade under projektets gång och vad ni skulle gjort annorlunda om ni startade projektet idag.
+- **Demo**
+    - Demonstrera er produkt utifrån MVP-kraven. Visa hur applikationen fungerar och lyft fram det ni är mest nöjda med.
+
+Utöver ovan finns inga speciella krav och det står er fritta att lägga upp det som ni önskar.
+
+Upplägget kommer att vara ungefär så här för varje respektive presentation;
+_grupp presenterar 15-20 minuter, andra medverkande grupper och lärare kommenterar och ger feedback_.
+Total tidsåtgång ca 30 min per grupp.
+
+- Gruppen behöver anpassa sin presentation utefter tillgänglig tid - ni har 15-20 minuter. 10 minuter är inte ok. Förbered er. Lägg till innehåll om ni inte når upp till tidsgränsen. 
+
+- Ha kamera på vid presentationen.
+
+- Tillfället kan komma att spelas in.
+
+
+### 4.1 Schema presentation
+
+| Slott | Datum och tid | Deltagande grupper |
+| --- | --- | --- 
+| A | Tisdag 2/6, 10:30 - 12:00 | 1, 7, 18 |
+| B | Onsdag 3/6, 10:30 - 11:30 | 10, 12 |
+| C | Torsdag 4/6, 10:30 - 11:30 | 15, 16 |
+
+
+
+### 4.2 Zoom-länk
+
+Presentationerna genomförs i Zoom på följande länk:
+
+ [https://bth.zoom.us/j/8547763266](https://bth.zoom.us/j/8547763266)
+
+---
+
+---
+
+## 5. Individuell dokumentation
+
+Varje gruppmedlem skriver sin egen rapport/reflektion och ska innehålla:
+
+1. **Tekniskt lärande**
+    - Beskriv områden där du känner att du verkligen utvecklats under kursen som helhet?
+2. **Processmässigt lärande**
+    - Hur fungerade samarbetet med gruppen under den här sista sprinten?
+    - Vad tycker du har fungerat bra i gruppens arbetssätt under kursens gång?
+    - Vad hade gruppen kunnat göra, eller borde gjort, annorlunda om ni startade om idag?
+3. **Självbedömning**
+I förhållande till kursen som helhet:
+    - Vad hade du kunnat eller velat göra annorlunda under kursen?
+    - Hur har jag utvecklats som utvecklare och som gruppmedlem under kursens gång?
+5. **Dina viktigaste lärdomar i förhållande till:**
+    - Vad är den viktigaste tekniska lärdomen du tar med dig från kursen?
+    - Vad är den viktigaste processmässiga lärdomen du tar med dig?
+    - Minst en konkret sak — teknisk, processmässig eller personlig — som du inte visste när kursen började men vet nu.
+
+Den individuella rapporten lämnas in separat på Canvas.
+
+
+## Sammanfattning — vad lämnas in och var?
+| Vad | Vem | Var |
+| --- | --- | --- |
+| Kod | Gruppen | PR för `submission-sprint-99` mot `main` |
+| Grupprapport | Gruppen | `docs/sprint-99.md` del av ovan PR |
+| Granskning | Gruppen | länk till issue i grupprapport |
+| Presentation | Gruppen| Live enligt schema |
+| Individuell rapport | Individ | Canvas |
