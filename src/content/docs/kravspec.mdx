@@ -65,13 +65,18 @@ Kravspecifikation kan uppdateras under kursens gång - titta in här då och då
 
 ---
 
-### versionshistorik
+:::danger[Kravspecen har uppdaterats till v.0.4]
+se nedan historik
+:::
+
+### Versionshistorik
 
 | Version | Datum    | Förändring                  |
 |---------|----------|-----------------------------|
 | 0.1     | 2026-03-02 | Från utkast till 0.1      |
 | 0.2     | 2026-03-09 | 4.0 MVP fastställd        |
 | 0.3     | 2026-04-01 | 1.3 Tekniska ramar (korrekt url till api)        |
+| 0.4     | 2026-05-11 | [2.2.3](/kravspec/#223-filträdfile-explorer), [2.6.1](/kravspec/#26-integrerad-ai) |
 
 
 ---
@@ -174,7 +179,28 @@ Användare ska kunna se en översikt över alla sina filer för att enkelt hitta
 - Användare ska kunna öppna filer genom att klicka på dem
 - Delade filer ska ha visuell indikation
 
+
+
+:::caution[Nytt krav]
+Kravet nedan, 2.2.3, är nytt sedan v.0.4.
+:::
+
+
+#### 2.2.3 Filträd/File Explorer
+
+**Prioritet: Hög**
+ 
+ Alla filer i projektet ska kunna visas i en navigerbar struktur, liknande en IDE.
+
+Funktionella förväntningar är:
+
+- Alla filer ska visas i en sidebar/explorer
+- Användare ska kunna klicka på filer för att öppna dem i editorn
+- Aktiv fil ska vara visuellt markerad
+- Filnamn ska visas med ikoner baserat på filtyp
+
 ---
+
 
 ### 2.3 Kodredigering
 
@@ -234,6 +260,7 @@ Användare ska kunna ångra och göra om ändringar i sin kod.
 - Redo ska fungera med kortkommando
 - Undo/redo ska fungera per fil, inte globalt
 
+
 ---
 
 ### 2.4 Realtidssamarbete
@@ -285,6 +312,39 @@ Fil-/projektägare ska kunna dela filer/projekt med andra användare så att de 
 - Delade användare ska få tillgång till filer/projektet
 - Delade projekt ska visas i användarens fillista, tydligt märkt som delat
 - Användare ska kunna ta bort sig själv från delade projekt
+
+---
+
+### 2.6 Integrerad AI
+
+
+:::caution[Nytt krav]
+Kravet nedan, 2.6.1, är nytt sedan v.0.4.
+:::
+
+_CoEd's CTO har nyligen varit på konferens, för mellanchefer i tekniksektorn, om AI och blivit mer eller mindre frälst._
+
+_Han ska tydligen har utbristit i följande när han kom tillbaka;_
+
+"_Vi måste ha AI!_     
+_Vi måste!_  
+_NUUUU!"_
+
+_Därav detta nya funktionella krav med prioritet medel._
+
+#### 2.6.1 Integrerad AI "hjälp med kodning"
+
+**Prioritet: Medel**
+
+Editorn erbjuder AI-assistans direkt i kodvyn. Användaren kan ställa frågor, be om kodförslag eller få förklaringar av markerad kod. Det ska fungera enligt instruktioner i kursen jsux [enligt följande](https://dbwebb-jsux.github.io/kunskap/azure_openai_api/) 
+
+Funktionella förväntningar:
+- Användare ska kunna trigga AI-assistans via ett tydligt UI-element i editorn
+- Användare ska kunna markera ett kodblock och ställa en fråga om det
+- Svar från AI ska visas i editorn utan att sidan laddas om
+- Alla AI-förfrågningar skickas vidare till en underliggande AI-tjänst
+- Felhantering ska finnas för fall då AI-tjänsten inte svarar eller returnerar fel
+
 
 ---
 
